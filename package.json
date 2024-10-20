@@ -1,0 +1,19 @@
+{
+  "name": "christmas-shop",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/EternalRival/christmas-shop.git"
+  },
+  "author": "eternalrival",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EternalRival/christmas-shop/issues"
+  },
+  "homepage": "https://github.com/EternalRival/christmas-shop#readme",
+  "description": "christmas themed two pages website based on figma layout"
+}
