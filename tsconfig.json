@@ -31,5 +31,5 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["**/*.ts", "webpack.config.mjs"]
+  "include": ["**/*.ts", "webpack.config.mjs", "stylelint.config.mjs"]
 }

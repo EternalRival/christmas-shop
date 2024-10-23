@@ -1,3 +1,17 @@
+@import url('./assets/fonts/typography.css');
+
+:root {
+  --color-primary: #ff4646;
+  --color-primary-10: #ff46461a;
+  --color-dark: #181c29;
+  --color-static-white: #fff;
+  --color-static-white-40: #fff6;
+  --color-static-white-20: #fff3;
+  --color-tag-purple: #4361ff;
+  --color-tag-pink: #ff43f7;
+  --color-tag-green: #06a44f;
+}
+
 * {
   outline: 1px dashed teal;
 }
