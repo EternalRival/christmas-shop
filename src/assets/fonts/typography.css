@@ -1,0 +1,84 @@
+@font-face {
+  font-family: Monsterrat-Semibold;
+  font-weight: 600;
+  src: url('./monsterrat/Montserrat-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Monsterrat-Regular;
+  font-weight: 400;
+  src: url('./monsterrat/Montserrat-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Allura-Regular;
+  font-weight: 400;
+  src: url('./allura/Allura-Regular.woff2') format('woff2');
+}
+
+.text-header-1 {
+  font-family: Monsterrat-Semibold, sans-serif;
+  font-size: 2rem;
+  line-height: 150%;
+  text-transform: uppercase;
+  letter-spacing: 18%;
+}
+
+.text-header-2 {
+  font-family: Monsterrat-Semibold, sans-serif;
+  font-size: 1.5rem;
+  line-height: 152%;
+  text-transform: uppercase;
+  letter-spacing: 16%;
+}
+
+.text-header-3 {
+  font-family: Monsterrat-Semibold, sans-serif;
+  font-size: 1rem;
+  line-height: 152%;
+  text-transform: uppercase;
+  letter-spacing: 8%;
+}
+
+.text-header-4 {
+  font-family: Monsterrat-Semibold, sans-serif;
+  font-size: 0.75rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+}
+
+.text-paragraph {
+  font-family: Monsterrat-Regular, sans-serif;
+  font-size: 1rem;
+  line-height: 148%;
+}
+
+.text-action-large {
+  font-family: Monsterrat-Semibold, sans-serif;
+  font-size: 1.5rem;
+  line-height: 152%;
+  text-transform: uppercase;
+  letter-spacing: 16%;
+}
+
+.text-action-small {
+  font-family: Monsterrat-Semibold, sans-serif;
+  font-size: 0.75rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+}
+
+.text-caption {
+  font-family: Allura-Regular, sans-serif;
+  font-size: 1.5rem;
+  line-height: 100%;
+  letter-spacing: 5%;
+}
+
+.text-slider-text {
+  font-family: Monsterrat-Semibold, sans-serif;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
