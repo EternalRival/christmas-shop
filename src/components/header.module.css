@@ -25,6 +25,10 @@
   .nav-list {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
+
+    height: 100%;
+    margin: 0;
     padding-left: 0;
   }
 
@@ -40,7 +44,8 @@
 
     border-radius: 0.125rem;
 
-    transition: 250ms;
+    transition-duration: 250ms;
+    transition-property: color, background-color;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -66,8 +71,6 @@
 
   width: 2.5rem;
   height: 2.5rem;
-
-  outline: 1px dashed teal;
 
   &::before {
     transform: translateY(-0.25rem);
