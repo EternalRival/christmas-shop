@@ -15,10 +15,14 @@ function createElementFactory<T extends TagName>(tagName: T) {
 }
 
 export const a = createElementFactory('a');
+export const button = createElementFactory('button');
 export const div = createElementFactory('div');
+export const h1 = createElementFactory('h1');
 export const header = createElementFactory('header');
 export const input = createElementFactory('input');
 export const label = createElementFactory('label');
 export const li = createElementFactory('li');
+export const main = createElementFactory('main');
 export const nav = createElementFactory('nav');
+export const section = createElementFactory('section');
 export const ul = createElementFactory('ul');
