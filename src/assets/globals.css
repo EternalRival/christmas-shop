@@ -1,4 +1,5 @@
-@import url('./assets/fonts/typography.css');
+@import url('modern-normalize/modern-normalize.css');
+@import url('./fonts/typography.css');
 
 :root {
   --color-primary: #ff4646;
@@ -10,8 +11,4 @@
   --color-tag-purple: #4361ff;
   --color-tag-pink: #ff43f7;
   --color-tag-green: #06a44f;
-}
-
-* {
-  outline: 1px dashed teal;
 }

@@ -21,7 +21,7 @@
   font-size: 2rem;
   line-height: 150%;
   text-transform: uppercase;
-  letter-spacing: 18%;
+  letter-spacing: 0.18em;
 }
 
 .text-header-2 {
@@ -29,7 +29,7 @@
   font-size: 1.5rem;
   line-height: 152%;
   text-transform: uppercase;
-  letter-spacing: 16%;
+  letter-spacing: 0.16em;
 }
 
 .text-header-3 {
@@ -37,7 +37,7 @@
   font-size: 1rem;
   line-height: 152%;
   text-transform: uppercase;
-  letter-spacing: 8%;
+  letter-spacing: 0.08em;
 }
 
 .text-header-4 {
@@ -45,7 +45,7 @@
   font-size: 0.75rem;
   line-height: 130%;
   text-transform: uppercase;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
 }
 
 .text-paragraph {
@@ -59,7 +59,7 @@
   font-size: 1.5rem;
   line-height: 152%;
   text-transform: uppercase;
-  letter-spacing: 16%;
+  letter-spacing: 0.16em;
 }
 
 .text-action-small {
@@ -67,14 +67,14 @@
   font-size: 0.75rem;
   line-height: 130%;
   text-transform: uppercase;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
 }
 
 .text-caption {
   font-family: Allura-Regular, sans-serif;
   font-size: 1.5rem;
   line-height: 100%;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
 }
 
 .text-slider-text {

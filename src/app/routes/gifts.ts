@@ -1,5 +1,5 @@
 import Header from '~/components/header';
-import './globals.css';
+import '~/assets/globals.css';
 
 console.log('Hello World!');
 
