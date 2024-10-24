@@ -1,0 +1,27 @@
+.hero {
+  padding: 3.75rem 0.5rem;
+
+  color: var(--color-static-white);
+
+  background-color: var(--color-primary);
+  background-image: url('../assets/images/bg-ball.png'), url('../assets/images/bg-snow.png');
+  background-position: center;
+  background-size: cover;
+  border-radius: 1.25rem 1.25rem 0 0;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+
+    max-width: 430px;
+    margin-inline: auto;
+    padding-block: 3.75rem;
+  }
+
+  .heading {
+    margin: 0;
+    text-align: center;
+  }
+}

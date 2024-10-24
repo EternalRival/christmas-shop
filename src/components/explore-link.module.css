@@ -1,0 +1,22 @@
+.button {
+  cursor: pointer;
+
+  padding: 1.25rem 2rem;
+
+  color: var(--color-static-white);
+  text-decoration: none;
+
+  background-color: var(--color-dark);
+  border: none;
+  border-radius: 1.25rem;
+
+  transition-duration: 250ms;
+  transition-property: color, background-color;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--color-dark);
+      background-color: var(--color-static-white);
+    }
+  }
+}

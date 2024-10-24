@@ -1,23 +1,23 @@
 @font-face {
-  font-family: Monsterrat-Semibold;
+  font-family: Montserrat;
   font-weight: 600;
-  src: url('./monsterrat/Montserrat-SemiBold.woff2') format('woff2');
+  src: url('./montserrat/Montserrat-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: Monsterrat-Regular;
+  font-family: Montserrat;
   font-weight: 400;
-  src: url('./monsterrat/Montserrat-Regular.woff2') format('woff2');
+  src: url('./montserrat/Montserrat-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: Allura-Regular;
+  font-family: Allura;
   font-weight: 400;
   src: url('./allura/Allura-Regular.woff2') format('woff2');
 }
 
 .text-header-1 {
-  font-family: Monsterrat-Semibold, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.5;
@@ -26,7 +26,7 @@
 }
 
 .text-header-2 {
-  font-family: Monsterrat-Semibold, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.52;
@@ -35,7 +35,7 @@
 }
 
 .text-header-3 {
-  font-family: Monsterrat-Semibold, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.52;
@@ -44,7 +44,7 @@
 }
 
 .text-header-4 {
-  font-family: Monsterrat-Semibold, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.3;
@@ -53,14 +53,14 @@
 }
 
 .text-paragraph {
-  font-family: Monsterrat-Regular, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.48;
 }
 
 .text-action-large {
-  font-family: Monsterrat-Semibold, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.52;
@@ -69,7 +69,7 @@
 }
 
 .text-action-small {
-  font-family: Monsterrat-Semibold, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.3;
@@ -78,7 +78,7 @@
 }
 
 .text-caption {
-  font-family: Allura-Regular, sans-serif;
+  font-family: Allura, sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1;
@@ -86,7 +86,7 @@
 }
 
 .text-slider-text {
-  font-family: Monsterrat-Semibold, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 5rem;
   font-weight: 600;
   text-transform: uppercase;
