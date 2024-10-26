@@ -1,7 +1,8 @@
 import clsx from 'clsx';
+import { Icon } from '~/assets/icons/icon.enum';
 import { a, div, header, input, label, li, nav, ul } from '~/utils/create-element';
 import styles from './header.module.css';
-import Icon from './icon';
+import SVGIcon from './svg-icon';
 
 const MENU_LINKS = [
   { text: 'gifts', href: '#gifts' },
@@ -14,7 +15,7 @@ export default function Header() {
   return header({ className: styles['header'] }, [
     div({ className: styles['content'] }, [
       a({ className: clsx('text-action-small', styles['logo']), href: '#' }, [
-        Icon({ name: 'snowflake', className: styles['icon'] }),
+        SVGIcon({ name: Icon.SNOWFLAKE, className: styles['icon'] }),
         'the gifts',
       ]),
 

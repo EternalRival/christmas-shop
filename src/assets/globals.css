@@ -12,3 +12,7 @@
   --color-tag-pink: #ff43f7;
   --color-tag-green: #06a44f;
 }
+
+:where(h1, h2, h3, h4, h5, h6, p) {
+  margin-block: 0;
+}

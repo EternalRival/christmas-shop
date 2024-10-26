@@ -8,7 +8,8 @@
     "build": "webpack --mode=production --node-env=production",
     "dev": "webpack serve",
     "format": "prettier -luw .",
-    "stylelint": "npx stylelint \"**/*.css\" --fix"
+    "stylelint": "npx stylelint \"src/**/*.css\" --fix",
+    "fix": "npm run format && npm run stylelint"
   },
   "repository": {
     "type": "git",

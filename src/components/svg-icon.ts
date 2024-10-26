@@ -1,8 +1,9 @@
-import ICON_URL from '~/assets/images/icons.svg';
+import { Icon } from '~/assets/icons/icon.enum';
+import ICON_URL from '~/assets/icons/icons-sprite.svg';
 
 const NS = 'http://www.w3.org/2000/svg';
 
-export default function Icon({ name, className }: { name: string; className?: string }) {
+export default function SVGIcon({ name, className }: { name: Icon; className?: string }) {
   const svg = document.createElementNS(NS, 'svg');
   const use = document.createElementNS(NS, 'use');
 

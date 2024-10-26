@@ -1,4 +1,4 @@
-.about {
+.about-section {
   padding: 3.75rem 0.5rem;
 
   background-color: var(--color-primary);
@@ -33,14 +33,6 @@
 
   .caption {
     color: var(--color-primary);
-  }
-
-  .heading {
-    margin-block: 0;
-  }
-
-  .paragraph {
-    margin-block: 0;
   }
 
   .image-container {

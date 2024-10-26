@@ -8,12 +8,12 @@ const HEADING_TEXT = 'Gift yourself the magic of new possibilities';
 const CAPTION_TEXT_2 = 'and Happy New Year';
 
 export default function HeroSection() {
-  return section({ className: styles['hero'] }, [
+  return section({ className: styles['hero-section'] }, [
     div({ className: styles['content'] }, [
-      div({ className: clsx('text-caption', styles['caption']), textContent: CAPTION_TEXT_1 }),
-      h1({ className: clsx('text-header-1', styles['heading']), textContent: HEADING_TEXT }),
+      div({ className: clsx('text-caption'), textContent: CAPTION_TEXT_1 }),
+      h1({ className: clsx(styles['heading'], 'text-header-1'), textContent: HEADING_TEXT }),
       ExploreButton(),
-      div({ className: clsx('text-caption', styles['caption']), textContent: CAPTION_TEXT_2 }),
+      div({ className: clsx('text-caption'), textContent: CAPTION_TEXT_2 }),
     ]),
   ]);
 }
