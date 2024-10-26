@@ -9,3 +9,9 @@ declare module '*.svg' {
 
   export default classes;
 }
+
+declare module '*.webp' {
+  const classes: string;
+
+  export default classes;
+}

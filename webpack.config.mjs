@@ -62,7 +62,7 @@ export default {
         ],
       },
       {
-        test: /\.(woff2|png)$/i,
+        test: /\.(woff2|webp)$/i,
         type: 'asset',
       },
       {

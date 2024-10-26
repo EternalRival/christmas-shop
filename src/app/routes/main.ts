@@ -1,8 +1,9 @@
-import Header from '~/components/header';
 import '~/assets/globals.css';
+import AboutSection from '~/components/about-section';
+import Header from '~/components/header';
+import HeroSection from '~/components/hero-section';
 import { main } from '~/utils/create-element';
-import Hero from '~/components/hero';
 
 console.log('Hello World!');
 
-document.body.append(Header(), main(null, [Hero(), 'about', 'slider', 'bestGifts', 'cta']), 'footer');
+document.body.append(Header(), main(null, [HeroSection(), AboutSection(), 'slider', 'bestGifts', 'cta']), 'footer');
