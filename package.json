@@ -9,7 +9,8 @@
     "dev": "webpack serve",
     "format": "prettier -luw .",
     "stylelint": "npx stylelint \"src/**/*.css\" --fix",
-    "fix": "npm run format && npm run stylelint"
+    "fix": "npm run format && npm run stylelint",
+    "deploy": "npm run build && netlify deploy --prod --dir=dist"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.1",
+    "netlify-cli": "^17.37.1",
     "prettier": "^3.3.3",
     "style-loader": "^4.0.0",
     "stylelint": "^16.10.0",
