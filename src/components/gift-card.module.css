@@ -1,4 +1,6 @@
 .card {
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
 
@@ -21,8 +23,6 @@
 
     padding: 1.25rem;
 
-    color: var(--color-dark);
-
     background-color: var(--color-static-white);
     border-radius: 1.25rem;
   }
@@ -37,5 +37,17 @@
 
   .for-work-heading {
     color: var(--color-tag-purple);
+  }
+
+  .name {
+    color: var(--color-dark);
+    transition-duration: 250ms;
+    transition-property: color;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .name {
+      color: var(--color-primary);
+    }
   }
 }

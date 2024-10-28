@@ -63,7 +63,7 @@ export default function GiftCard({ cardData }: GiftCardProps) {
         className: clsx(styles[getHeadingColoringSelectorByCategory(category)], 'text-header-4'),
         textContent: category,
       }),
-      h3({ className: 'text-header-3', textContent: name }),
+      h3({ className: clsx(styles['name'], 'text-header-3'), textContent: name }),
     ]),
   ]);
 }

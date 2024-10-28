@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { Icon } from '~/assets/icons/icon.enum';
 import { button, div, h2, img, section } from '~/utils/create-element';
 import CHRISTMAS_TREE_BALL_IMAGE_SRC from '../assets/images/christmas-tree-ball.webp';
@@ -30,10 +29,6 @@ const SLIDER_ITEM_LIST: SliderItem[] = [
 ];
 const CAPTION_TEXT = 'Become Happier!';
 const HEADER_TEXT = 'in the new 2025';
-
-void SLIDER_ITEM_LIST;
-void clsx;
-void img;
 
 export default function SliderSection() {
   return section({ className: styles['slider-section'] }, [
