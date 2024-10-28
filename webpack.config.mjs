@@ -1,6 +1,6 @@
-import path from 'node:path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'node:path';
 
 const HTML_TEMPLATE_PATH = './index.html';
 
@@ -76,7 +76,7 @@ export default {
   resolve: {
     extensions: ['.ts', '.js', '...'],
     alias: {
-      '~': path.resolve(import.meta.dirname, 'src'),
+      '~': path.resolve('src'),
     },
   },
 };

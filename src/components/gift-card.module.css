@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: 19.375rem;
+  height: 21.375rem;
+
+  background-color: var(--color-content-background);
+  border-radius: 1.25rem;
+
+  .image-container {
+    width: 19.375rem;
+    height: 14.375rem;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.5rem;
+
+    padding: 1.25rem;
+
+    color: var(--color-dark);
+
+    background-color: var(--color-static-white);
+    border-radius: 1.25rem;
+  }
+
+  .for-harmony-heading {
+    color: var(--color-tag-pink);
+  }
+
+  .for-health-heading {
+    color: var(--color-tag-green);
+  }
+
+  .for-work-heading {
+    color: var(--color-tag-purple);
+  }
+}

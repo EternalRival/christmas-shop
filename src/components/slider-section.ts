@@ -8,7 +8,17 @@ import SNOWMAN_IMAGE_SRC from '../assets/images/snowman.webp';
 import styles from './slider-section.module.css';
 import SVGIcon from './svg-icon';
 
-const SLIDER_ITEM_LIST = [
+type SliderItem =
+  | {
+      type: 'text';
+      text: string;
+    }
+  | {
+      type: 'image';
+      imageSrc: string;
+    };
+
+const SLIDER_ITEM_LIST: SliderItem[] = [
   { type: 'text', text: 'Live' },
   { type: 'image', imageSrc: SNOWMAN_IMAGE_SRC },
   { type: 'text', text: 'create' },
@@ -51,14 +61,6 @@ export default function SliderSection() {
         button({ className: styles['slider-button'] }, [SVGIcon({ name: Icon.ARROW_LEFT })]),
         button({ className: styles['slider-button'] }, [SVGIcon({ name: Icon.ARROW_RIGHT })]),
       ]),
-
-      /* div({ className: styles['text-container-outer'] }, [
-        div({ className: styles['text-container-inner'] }, [
-          div({ className: clsx(styles['caption'], 'text-caption'), textContent: CAPTION_TEXT }),
-          h2({ className: clsx(styles['heading'], 'text-header-2'), textContent: HEADER_TEXT }),
-        ]),
-      ]),
-      div({ className: styles['image-container'] }, [img({ src: SANTA_IMAGE_SRC, inert: true })]), */
     ]),
   ]);
 }
