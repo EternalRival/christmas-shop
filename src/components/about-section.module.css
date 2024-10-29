@@ -8,7 +8,7 @@
   background-position: center;
   background-size: cover;
 
-  .content {
+  .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,8 +37,7 @@
     color: var(--color-primary);
   }
 
-  .image-container {
-    overflow: clip;
+  .image {
     height: 33rem;
     border-radius: 1.25rem;
   }

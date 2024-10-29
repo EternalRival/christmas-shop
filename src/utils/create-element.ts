@@ -17,6 +17,7 @@ function createElementFactory<T extends TagName>(tagName: T) {
 export const a = createElementFactory('a');
 export const button = createElementFactory('button');
 export const div = createElementFactory('div');
+export const footer = createElementFactory('footer');
 export const h1 = createElementFactory('h1');
 export const h2 = createElementFactory('h2');
 export const h3 = createElementFactory('h3');
@@ -30,4 +31,5 @@ export const main = createElementFactory('main');
 export const nav = createElementFactory('nav');
 export const p = createElementFactory('p');
 export const section = createElementFactory('section');
+export const span = createElementFactory('span');
 export const ul = createElementFactory('ul');

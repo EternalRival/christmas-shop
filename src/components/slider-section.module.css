@@ -12,7 +12,7 @@
   background-position: center;
   background-size: cover;
 
-  .content {
+  .container {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -36,15 +36,12 @@
   }
 
   .slider-container-inner {
-    /* 2 */
-
     display: flex;
     gap: 1.25rem;
     align-items: center;
   }
 
-  .slider-image-container {
-    overflow: clip;
+  .slider-image {
     width: 12.5rem;
     height: 12.5rem;
     border-radius: 1.25rem;

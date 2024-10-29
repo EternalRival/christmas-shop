@@ -10,7 +10,7 @@
   background-color: var(--color-content-background);
   border-radius: 1.25rem;
 
-  .image-container {
+  .image {
     width: 19.375rem;
     height: 14.375rem;
   }

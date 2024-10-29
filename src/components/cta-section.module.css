@@ -1,4 +1,4 @@
-.best-gifts-section {
+.cta-section {
   max-width: 90rem;
   margin-inline: auto;
   padding: 3.75rem 0.5rem;
@@ -6,31 +6,36 @@
   color: var(--color-static-white);
 
   background-color: var(--color-primary);
-  background-image: url('../assets/images/bg-snow.webp');
+  background-image: url('../assets/images/bg-snow.webp'), url('../assets/images/bg-forest.webp');
   background-position: center;
   background-size: cover;
+  border-radius: 0 0 1.25rem 1.25rem;
 
   .container {
+    max-width: 79.75rem;
+    margin-inline: auto;
+    padding-block: 3.75rem;
+  }
+
+  .container-inner {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-
-    max-width: 79.75rem;
-    margin-inline: auto;
-  }
-
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
     align-items: center;
 
     max-width: 26.625rem;
     margin-inline: auto;
+    padding-block: 3.75rem;
   }
 
-  .cards-container {
+  .heading {
+    text-align: center;
+  }
+
+  .timer-container {
     display: flex;
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
   }
 }

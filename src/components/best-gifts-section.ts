@@ -12,7 +12,7 @@ type GiftCardData = NonNullable<Parameters<typeof GiftCard>[number]['cardData']>
 
 export default function BestGiftsSection({ gifts }: { gifts: GiftCardData[] }) {
   return section({ className: styles['best-gifts-section'] }, [
-    div({ className: styles['content'] }, [
+    div({ className: styles['container'] }, [
       div({ className: styles['text-container'] }, [
         div({ className: 'text-caption', textContent: CAPTION_TEXT }),
         h2({ className: clsx('text-header-2'), textContent: HEADER_TEXT }),

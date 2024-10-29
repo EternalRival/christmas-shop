@@ -4,7 +4,7 @@ import { a, div, header, input, label, li, nav, ul } from '~/utils/create-elemen
 import styles from './header.module.css';
 import SVGIcon from './svg-icon';
 
-const MENU_LINKS = [
+const MENU_LINK_LIST = [
   { text: 'gifts', href: '#gifts' },
   { text: 'about', href: '#about' },
   { text: 'best', href: '#best' },
@@ -13,7 +13,7 @@ const MENU_LINKS = [
 
 export default function Header() {
   return header({ className: styles['header'] }, [
-    div({ className: styles['content'] }, [
+    div({ className: styles['container'] }, [
       a({ className: clsx('text-action-small', styles['logo']), href: '#' }, [
         SVGIcon({ name: Icon.SNOWFLAKE, className: styles['icon'] }),
         'the gifts',
@@ -22,7 +22,7 @@ export default function Header() {
       nav({ className: styles['nav-menu'] }, [
         ul(
           { className: styles['nav-list'] },
-          MENU_LINKS.map(({ text, href }) =>
+          MENU_LINK_LIST.map(({ text, href }) =>
             li({ className: styles['nav-item'] }, [
               a({ className: clsx(styles['nav-link'], 'text-action-small'), href, text }),
             ]),

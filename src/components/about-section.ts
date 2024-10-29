@@ -10,7 +10,7 @@ const PARAGRAPH_TEXT =
 
 export default function AboutSection() {
   return section({ className: styles['about-section'] }, [
-    div({ className: styles['content'] }, [
+    div({ className: styles['container'] }, [
       div({ className: styles['text-container-outer'] }, [
         div({ className: styles['text-container-inner'] }, [
           div({ className: clsx(styles['caption'], 'text-caption'), textContent: CAPTION_TEXT }),
@@ -18,7 +18,7 @@ export default function AboutSection() {
           p({ className: clsx('text-paragraph'), textContent: PARAGRAPH_TEXT }),
         ]),
       ]),
-      div({ className: styles['image-container'] }, [img({ src: SANTA_IMAGE_SRC, inert: true })]),
+      img({ className: styles['image'], src: SANTA_IMAGE_SRC, alt: '', inert: true }),
     ]),
   ]);
 }
