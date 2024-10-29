@@ -4,7 +4,7 @@ import { Icon } from '~/assets/icons/icon.enum';
 import SANTA_CLAUS_IMAGE_SRC from '~/assets/icons/santa-claus.svg';
 import SNAKE_IMAGE_SRC from '~/assets/icons/snake.svg';
 import SVGIcon from '~/components/svg-icon';
-import { a, div, footer, h3, img, p, span } from '~/utils/create-element';
+import { a, div, footer, h3, img, li, p, span, ul } from '~/utils/create-element';
 import styles from './footer.module.css';
 
 const CONTACT_LIST = [
@@ -31,10 +31,10 @@ const CAPTION_TEXT = 'Made in Rolling Scopes School';
 export default function Footer() {
   return footer({ className: styles['footer'] }, [
     div({ className: styles['container'] }, [
-      div(
-        { className: styles['contacts-container'] },
+      ul(
+        { className: styles['contacts-list'] },
         CONTACT_LIST.map(({ imageSrc, text, href, heading }) =>
-          div({ className: styles['contact-container'] }, [
+          li({ className: styles['contacts-list-item'] }, [
             img({ className: styles['contact-icon'], src: imageSrc, alt: '' }),
             a({ className: clsx(styles['contact-link'], 'text-action-large'), href, text, target: '_blank' }),
             h3({ className: clsx(styles['contact-heading'], 'text-header-3'), textContent: heading }),
@@ -42,12 +42,14 @@ export default function Footer() {
         ),
       ),
       div({ className: styles['lower-container'] }, [
-        div(
-          { className: styles['socials-container'] },
+        ul(
+          { className: styles['socials-list'] },
           SOCIALS_LIST.map(({ iconName, text, href }) =>
-            a({ className: styles['social-link'], href }, [
-              SVGIcon({ name: iconName }),
-              span({ className: 'sr-only', textContent: text }),
+            li({ className: styles['socials-list-item'] }, [
+              a({ className: styles['social-link'], href }, [
+                SVGIcon({ name: iconName }),
+                span({ className: 'sr-only', textContent: text }),
+              ]),
             ]),
           ),
         ),

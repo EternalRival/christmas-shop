@@ -22,13 +22,13 @@ export default {
     new HtmlWebpackPlugin({
       template: HTML_TEMPLATE_PATH,
       chunks: ['main'],
-      favicon: 'src/assets/images/christmas-tree-ball.webp',
+      favicon: 'src/assets/icons/favicon.svg',
     }),
     new HtmlWebpackPlugin({
       filename: 'gifts/index.html',
       template: HTML_TEMPLATE_PATH,
       chunks: ['gifts'],
-      favicon: 'src/assets/images/christmas-tree-ball.webp',
+      favicon: 'src/assets/icons/favicon.svg',
     }),
 
     ...(isProduction

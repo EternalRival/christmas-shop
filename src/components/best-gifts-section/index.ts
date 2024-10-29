@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import GiftCard from '~/components/gift-card';
-import { div, h2, p, section } from '~/utils/create-element';
+import { div, h2, li, p, section, ul } from '~/utils/create-element';
 import styles from './best-gifts-section.module.css';
 
 const BEST_GIFTS_NAME_LIST = ['Console.log Guru', 'Hydration Bot', 'Merge Master', 'Spontaneous Coding Philosopher'];
@@ -17,9 +17,13 @@ export default function BestGiftsSection({ gifts }: { gifts: GiftCardData[] }) {
         p({ className: 'text-caption', textContent: CAPTION_TEXT }),
         h2({ className: clsx('text-header-2'), textContent: HEADER_TEXT }),
       ]),
-      div(
-        { className: styles['cards-container'] },
-        BEST_GIFTS_NAME_LIST.map((name) => GiftCard({ cardData: gifts.find((gift) => gift.name === name) })),
+      ul(
+        { className: styles['cards-list'] },
+        BEST_GIFTS_NAME_LIST.map((name) =>
+          li({ className: styles['cards-list-item'] }, [
+            GiftCard({ cardData: gifts.find((gift) => gift.name === name) }),
+          ]),
+        ),
       ),
     ]),
   ]);
