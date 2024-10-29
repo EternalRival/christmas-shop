@@ -8,7 +8,7 @@
   color: var(--color-static-white);
 
   background-color: var(--color-primary);
-  background-image: url('../assets/images/bg-snow.webp');
+  background-image: url('../../assets/images/bg-snow.webp');
   background-position: center;
   background-size: cover;
 

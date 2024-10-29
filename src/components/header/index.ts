@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { Icon } from '~/assets/icons/icon.enum';
+import SVGIcon from '~/components/svg-icon';
 import { a, div, header, input, label, li, nav, ul } from '~/utils/create-element';
 import styles from './header.module.css';
-import SVGIcon from './svg-icon';
 
 const MENU_LINK_LIST = [
   { text: 'gifts', href: '#gifts' },

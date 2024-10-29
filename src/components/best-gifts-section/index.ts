@@ -1,7 +1,7 @@
 import clsx from 'clsx';
+import GiftCard from '~/components/gift-card';
 import { div, h2, p, section } from '~/utils/create-element';
 import styles from './best-gifts-section.module.css';
-import GiftCard from './gift-card';
 
 const BEST_GIFTS_NAME_LIST = ['Console.log Guru', 'Hydration Bot', 'Merge Master', 'Spontaneous Coding Philosopher'];
 

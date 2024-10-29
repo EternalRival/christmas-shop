@@ -3,9 +3,9 @@ import CHRISTMAS_TREE_IMAGE_SRC from '~/assets/icons/christmas-tree.svg';
 import { Icon } from '~/assets/icons/icon.enum';
 import SANTA_CLAUS_IMAGE_SRC from '~/assets/icons/santa-claus.svg';
 import SNAKE_IMAGE_SRC from '~/assets/icons/snake.svg';
+import SVGIcon from '~/components/svg-icon';
 import { a, div, footer, h3, img, p, span } from '~/utils/create-element';
 import styles from './footer.module.css';
-import SVGIcon from './svg-icon';
 
 const CONTACT_LIST = [
   { imageSrc: SANTA_CLAUS_IMAGE_SRC, text: '+375 (29) 111-22-33', href: 'tel:+375291112233', heading: 'Call Us' },

@@ -3,9 +3,9 @@ import CHRISTMAS_TREE_BALL_IMAGE_SRC from '~/assets/images/christmas-tree-ball.w
 import CHRISTMAS_TREES_IMAGE_SRC from '~/assets/images/christmas-trees.webp';
 import FAIRYTALE_HOUSE_IMAGE_SRC from '~/assets/images/fairytale-house.webp';
 import SNOWMAN_IMAGE_SRC from '~/assets/images/snowman.webp';
+import SVGIcon from '~/components/svg-icon';
 import { button, div, h2, img, p, section, span } from '~/utils/create-element';
 import styles from './slider-section.module.css';
-import SVGIcon from './svg-icon';
 
 type SliderItem =
   | {

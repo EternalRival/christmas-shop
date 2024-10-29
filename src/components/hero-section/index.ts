@@ -1,6 +1,6 @@
 import clsx from 'clsx';
+import ExploreButton from '~/components/explore-button';
 import { div, h1, p, section } from '~/utils/create-element';
-import ExploreButton from './explore-button';
 import styles from './hero-section.module.css';
 
 const CAPTION_TEXT_1 = 'Merry Christmas';
