@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import GIFT_FOR_HARMONY_IMAGE_SRC from '~/assets/images/gift-for-harmony.webp';
 import GIFT_FOR_HEALTH_IMAGE_SRC from '~/assets/images/gift-for-health.webp';
 import GIFT_FOR_WORK_IMAGE_SRC from '~/assets/images/gift-for-work.webp';
-import { div, h3, img, p } from '~/utils/create-element';
+import { article, button, div, img, p } from '~/utils/create-element';
 import RequiredError from '~/utils/required.error';
 import styles from './gift-card.module.css';
 
@@ -71,14 +71,14 @@ export default function GiftCard({ cardData }: GiftCardProps) {
 
   void { description, superpowers };
 
-  return div({ className: styles['card'] }, [
+  return article({ className: styles['card'] }, [
     img({ className: styles['image'], src: getImageSrcByCategory(category), alt: '' }),
     div({ className: styles['text-container'] }, [
       p({
         className: clsx(styles[getCategoryColoringSelectorByCategory(category)], 'text-header-4'),
         textContent: category,
       }),
-      h3({ className: clsx(styles['name'], 'text-header-3'), textContent: name }),
+      button({ className: clsx(styles['name'], 'text-header-3'), textContent: name }),
     ]),
   ]);
 }

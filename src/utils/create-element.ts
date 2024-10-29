@@ -15,6 +15,7 @@ function createElementFactory<T extends TagName>(tagName: T) {
 }
 
 export const a = createElementFactory('a');
+export const article = createElementFactory('article');
 export const button = createElementFactory('button');
 export const div = createElementFactory('div');
 export const footer = createElementFactory('footer');

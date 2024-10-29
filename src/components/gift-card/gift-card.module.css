@@ -1,5 +1,7 @@
 .card {
-  cursor: pointer;
+  --border-radius: 1.25rem;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -8,7 +10,7 @@
   height: 21.375rem;
 
   background-color: var(--color-content-background);
-  border-radius: 1.25rem;
+  border-radius: var(--border-radius);
 
   .image {
     width: 19.375rem;
@@ -40,9 +42,25 @@
   }
 
   .name {
+    cursor: pointer;
+
+    padding: 0;
+
     color: var(--color-dark);
+    text-align: unset;
+
+    background-color: unset;
+    border: unset;
+
     transition-duration: 250ms;
     transition-property: color;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--border-radius);
+    }
   }
 
   @media (hover: hover) and (pointer: fine) {
