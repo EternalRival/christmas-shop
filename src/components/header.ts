@@ -14,7 +14,7 @@ const MENU_LINK_LIST = [
 export default function Header() {
   return header({ className: styles['header'] }, [
     div({ className: styles['container'] }, [
-      a({ className: clsx('text-action-small', styles['logo']), href: '#' }, [
+      a({ className: clsx(styles['logo'], 'text-action-small'), href: '#' }, [
         SVGIcon({ name: Icon.SNOWFLAKE, className: styles['icon'] }),
         'the gifts',
       ]),
