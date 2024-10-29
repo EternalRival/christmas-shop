@@ -3,7 +3,7 @@ import CHRISTMAS_TREE_BALL_IMAGE_SRC from '~/assets/images/christmas-tree-ball.w
 import CHRISTMAS_TREES_IMAGE_SRC from '~/assets/images/christmas-trees.webp';
 import FAIRYTALE_HOUSE_IMAGE_SRC from '~/assets/images/fairytale-house.webp';
 import SNOWMAN_IMAGE_SRC from '~/assets/images/snowman.webp';
-import { button, div, h2, img, section } from '~/utils/create-element';
+import { button, div, h2, img, p, section, span } from '~/utils/create-element';
 import styles from './slider-section.module.css';
 import SVGIcon from './svg-icon';
 
@@ -30,6 +30,8 @@ const SLIDER_ITEM_LIST: SliderItem[] = [
 
 const CAPTION_TEXT = 'Become Happier!';
 const HEADER_TEXT = 'in the new 2025';
+const SLIDER_PREV_BUTTON_TEXT = 'previous slide button';
+const SLIDER_NEXT_BUTTON_TEXT = 'next slide button';
 
 class UnknownSliderItemTypeError extends Error {
   constructor() {
@@ -41,7 +43,7 @@ export default function SliderSection() {
   return section({ className: styles['slider-section'] }, [
     div({ className: styles['container'] }, [
       div({ className: styles['text-container'] }, [
-        div({ className: 'text-caption', textContent: CAPTION_TEXT }),
+        p({ className: 'text-caption', textContent: CAPTION_TEXT }),
         h2({ className: 'text-header-2', textContent: HEADER_TEXT }),
       ]),
       div({ className: styles['slider-container-outer'] }, [
@@ -50,7 +52,7 @@ export default function SliderSection() {
           SLIDER_ITEM_LIST.map((item) => {
             switch (item.type) {
               case 'text': {
-                return div({ className: 'text-slider-text', textContent: item.text });
+                return p({ className: 'text-slider-text', textContent: item.text });
               }
               case 'image': {
                 return img({ className: styles['slider-image'], src: item.imageSrc, alt: '' });
@@ -63,8 +65,14 @@ export default function SliderSection() {
         ),
       ]),
       div({ className: styles['slider-buttons-container'] }, [
-        button({ className: styles['slider-button'] }, [SVGIcon({ name: Icon.ARROW_LEFT })]),
-        button({ className: styles['slider-button'] }, [SVGIcon({ name: Icon.ARROW_RIGHT })]),
+        button({ className: styles['slider-button'] }, [
+          SVGIcon({ name: Icon.ARROW_LEFT }),
+          span({ className: 'sr-only', textContent: SLIDER_PREV_BUTTON_TEXT }),
+        ]),
+        button({ className: styles['slider-button'] }, [
+          SVGIcon({ name: Icon.ARROW_RIGHT }),
+          span({ className: 'sr-only', textContent: SLIDER_NEXT_BUTTON_TEXT }),
+        ]),
       ]),
     ]),
   ]);

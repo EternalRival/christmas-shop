@@ -3,7 +3,7 @@ import CHRISTMAS_TREE_IMAGE_SRC from '~/assets/icons/christmas-tree.svg';
 import { Icon } from '~/assets/icons/icon.enum';
 import SANTA_CLAUS_IMAGE_SRC from '~/assets/icons/santa-claus.svg';
 import SNAKE_IMAGE_SRC from '~/assets/icons/snake.svg';
-import { a, div, footer, h3, img, span } from '~/utils/create-element';
+import { a, div, footer, h3, img, p, span } from '~/utils/create-element';
 import styles from './footer.module.css';
 import SVGIcon from './svg-icon';
 
@@ -51,8 +51,8 @@ export default function Footer() {
             ]),
           ),
         ),
-        div({ className: 'text-paragraph', textContent: PARAGRAPH_TEXT }),
-        div({ className: 'text-caption', textContent: CAPTION_TEXT }),
+        p({ className: 'text-paragraph', textContent: PARAGRAPH_TEXT }),
+        a({ className: clsx(styles['school-link'], 'text-caption'), text: CAPTION_TEXT, href: '#', target: '_blank' }),
       ]),
     ]),
   ]);

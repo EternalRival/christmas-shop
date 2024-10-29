@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { div, h2, section } from '~/utils/create-element';
+import { div, h2, p, section } from '~/utils/create-element';
 import styles from './best-gifts-section.module.css';
 import GiftCard from './gift-card';
 
@@ -14,7 +14,7 @@ export default function BestGiftsSection({ gifts }: { gifts: GiftCardData[] }) {
   return section({ className: styles['best-gifts-section'] }, [
     div({ className: styles['container'] }, [
       div({ className: styles['text-container'] }, [
-        div({ className: 'text-caption', textContent: CAPTION_TEXT }),
+        p({ className: 'text-caption', textContent: CAPTION_TEXT }),
         h2({ className: clsx('text-header-2'), textContent: HEADER_TEXT }),
       ]),
       div(

@@ -13,9 +13,9 @@ export default function AboutSection() {
     div({ className: styles['container'] }, [
       div({ className: styles['text-container-outer'] }, [
         div({ className: styles['text-container-inner'] }, [
-          div({ className: clsx(styles['caption'], 'text-caption'), textContent: CAPTION_TEXT }),
-          h2({ className: clsx('text-header-2'), textContent: HEADER_TEXT }),
-          p({ className: clsx('text-paragraph'), textContent: PARAGRAPH_TEXT }),
+          p({ className: clsx(styles['caption'], 'text-caption'), textContent: CAPTION_TEXT }),
+          h2({ className: 'text-header-2', textContent: HEADER_TEXT }),
+          p({ className: 'text-paragraph', textContent: PARAGRAPH_TEXT }),
         ]),
       ]),
       img({ className: styles['image'], src: SANTA_IMAGE_SRC, alt: '', inert: true }),

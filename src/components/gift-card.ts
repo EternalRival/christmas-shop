@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import GIFT_FOR_HARMONY_IMAGE_SRC from '~/assets/images/gift-for-harmony.webp';
 import GIFT_FOR_HEALTH_IMAGE_SRC from '~/assets/images/gift-for-health.webp';
 import GIFT_FOR_WORK_IMAGE_SRC from '~/assets/images/gift-for-work.webp';
-import { div, h3, h4, img } from '~/utils/create-element';
-import styles from './gift-card.module.css';
+import { div, h3, img, p } from '~/utils/create-element';
 import RequiredError from '~/utils/required.error';
+import styles from './gift-card.module.css';
 
 type GiftCardData = {
   name: string;
@@ -45,7 +45,7 @@ function getImageSrcByCategory(category: string) {
   }
 }
 
-function getHeadingColoringSelectorByCategory(category: string) {
+function getCategoryColoringSelectorByCategory(category: string) {
   switch (category) {
     case 'For Harmony': {
       return 'for-harmony-heading';
@@ -74,8 +74,8 @@ export default function GiftCard({ cardData }: GiftCardProps) {
   return div({ className: styles['card'] }, [
     img({ className: styles['image'], src: getImageSrcByCategory(category), alt: '' }),
     div({ className: styles['text-container'] }, [
-      h4({
-        className: clsx(styles[getHeadingColoringSelectorByCategory(category)], 'text-header-4'),
+      p({
+        className: clsx(styles[getCategoryColoringSelectorByCategory(category)], 'text-header-4'),
         textContent: category,
       }),
       h3({ className: clsx(styles['name'], 'text-header-3'), textContent: name }),
