@@ -1,5 +1,6 @@
-import { div, p } from '~/utils/create-element';
+import { div, span } from '~/utils/create-element';
 import styles from './timer.module.css';
+import clsx from 'clsx';
 
 const DAYS_TEXT = 'days';
 const HOURS_TEXT = 'hours';
@@ -17,22 +18,18 @@ export default function Timer({
   minutes: string;
   seconds: string;
 }) {
-  return div({ className: styles['timer'] }, [
-    div(null, [
-      p({ className: 'text-header-2', textContent: days }),
-      p({ className: 'text-header-4', textContent: DAYS_TEXT }),
-    ]),
-    div(null, [
-      p({ className: 'text-header-2', textContent: hours }),
-      p({ className: 'text-header-4', textContent: HOURS_TEXT }),
-    ]),
-    div(null, [
-      p({ className: 'text-header-2', textContent: minutes }),
-      p({ className: 'text-header-4', textContent: MINUTES_TEXT }),
-    ]),
-    div(null, [
-      p({ className: 'text-header-2', textContent: seconds }),
-      p({ className: 'text-header-4', textContent: SECONDS_TEXT }),
-    ]),
-  ]);
+  return div(
+    { className: styles['timer'] },
+    [
+      [days, DAYS_TEXT],
+      [hours, HOURS_TEXT],
+      [minutes, MINUTES_TEXT],
+      [seconds, SECONDS_TEXT],
+    ].map(([counter, label]) =>
+      div({ className: styles['timer-item'] }, [
+        span({ className: clsx(styles['timer-item-text'], 'text-header-2'), textContent: counter }),
+        span({ className: clsx(styles['timer-item-text'], 'text-header-4'), textContent: label }),
+      ]),
+    ),
+  );
 }

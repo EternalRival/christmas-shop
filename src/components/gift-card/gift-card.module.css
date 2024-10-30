@@ -42,25 +42,20 @@
   }
 
   .name {
-    cursor: pointer;
-
-    padding: 0;
-
     color: var(--color-dark);
-    text-align: unset;
-
-    background-color: unset;
-    border: unset;
-
     transition-duration: 250ms;
     transition-property: color;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: var(--border-radius);
-    }
+  .show-details-button {
+    cursor: pointer;
+
+    position: absolute;
+    inset: 0;
+
+    background: unset;
+    border: unset;
+    border-radius: var(--border-radius);
   }
 
   @media (hover: hover) and (pointer: fine) {

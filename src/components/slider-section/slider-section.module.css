@@ -35,17 +35,14 @@
     /* 1 */
   }
 
-  .slider-list {
+  .slider-container-inner {
     display: flex;
     gap: 1.25rem;
     align-items: center;
-
-    margin-block: 0;
-    padding-left: 0;
   }
 
-  .slider-list-item {
-    list-style: none;
+  .slider-text {
+    display: block;
   }
 
   .slider-image {

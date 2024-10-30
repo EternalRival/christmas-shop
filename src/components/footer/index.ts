@@ -4,7 +4,7 @@ import { Icon } from '~/assets/icons/icon.enum';
 import SANTA_CLAUS_IMAGE_SRC from '~/assets/icons/santa-claus.svg';
 import SNAKE_IMAGE_SRC from '~/assets/icons/snake.svg';
 import SVGIcon from '~/components/svg-icon';
-import { a, div, footer, h3, img, li, p, span, ul } from '~/utils/create-element';
+import { a, div, footer, img, li, p, span, ul } from '~/utils/create-element';
 import styles from './footer.module.css';
 
 const CONTACT_LIST = [
@@ -37,7 +37,7 @@ export default function Footer() {
           li({ className: styles['contacts-list-item'] }, [
             img({ className: styles['contact-icon'], src: imageSrc, alt: '' }),
             a({ className: clsx(styles['contact-link'], 'text-action-large'), href, text, target: '_blank' }),
-            h3({ className: clsx(styles['contact-heading'], 'text-header-3'), textContent: heading }),
+            p({ className: clsx(styles['contact-heading'], 'text-header-3'), textContent: heading }),
           ]),
         ),
       ),

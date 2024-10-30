@@ -16,7 +16,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
 
-    margin-block: 0;
     padding-left: 0;
 
     border-radius: 3.75rem;
@@ -86,7 +85,6 @@
   .socials-list {
     display: flex;
     gap: 0.75rem;
-    margin-block: 0;
     padding-left: 0;
   }
 

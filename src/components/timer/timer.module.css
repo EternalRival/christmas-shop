@@ -8,4 +8,31 @@
 
   background-color: var(--color-static-white-40);
   border-radius: 1.25rem;
+
+  .timer-item {
+    position: relative;
+  }
+
+  .timer-item:not(:last-child) {
+    &::before {
+      --height: 20px;
+
+      content: '';
+
+      position: absolute;
+      top: calc(50% - var(--height) / 2);
+      right: 0;
+
+      display: block;
+
+      width: 1px;
+      height: var(--height);
+
+      background-color: var(--color-static-white-40);
+    }
+  }
+
+  .timer-item-text {
+    display: block;
+  }
 }

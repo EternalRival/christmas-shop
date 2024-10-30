@@ -1,10 +1,11 @@
+import clsx from 'clsx';
 import { Icon } from '~/assets/icons/icon.enum';
 import CHRISTMAS_TREE_BALL_IMAGE_SRC from '~/assets/images/christmas-tree-ball.webp';
 import CHRISTMAS_TREES_IMAGE_SRC from '~/assets/images/christmas-trees.webp';
 import FAIRYTALE_HOUSE_IMAGE_SRC from '~/assets/images/fairytale-house.webp';
 import SNOWMAN_IMAGE_SRC from '~/assets/images/snowman.webp';
 import SVGIcon from '~/components/svg-icon';
-import { button, div, h2, img, li, p, section, span, ul } from '~/utils/create-element';
+import { button, div, h2, img, p, section, span } from '~/utils/create-element';
 import styles from './slider-section.module.css';
 
 type SliderItem =
@@ -28,8 +29,8 @@ const SLIDER_ITEM_LIST: SliderItem[] = [
   { type: 'image', imageSrc: FAIRYTALE_HOUSE_IMAGE_SRC },
 ];
 
-const CAPTION_TEXT = 'Become Happier!';
-const HEADER_TEXT = 'in the new 2025';
+const HEADING_TEXT = 'Become Happier!';
+const PARAGRAPH_TEXT = 'in the new 2025';
 const SLIDER_PREV_BUTTON_TEXT = 'previous slide button';
 const SLIDER_NEXT_BUTTON_TEXT = 'next slide button';
 
@@ -39,33 +40,29 @@ class UnknownSliderItemTypeError extends Error {
   }
 }
 
-function SlideItem(item: SliderItem) {
-  switch (item.type) {
-    case 'text': {
-      return p({ className: 'text-slider-text', textContent: item.text });
-    }
-    case 'image': {
-      return img({ className: styles['slider-image'], src: item.imageSrc, alt: '' });
-    }
-    default: {
-      throw new UnknownSliderItemTypeError();
-    }
-  }
-}
-
 export default function SliderSection() {
   return section({ className: styles['slider-section'] }, [
     div({ className: styles['container'] }, [
       div({ className: styles['text-container'] }, [
-        p({ className: 'text-caption', textContent: CAPTION_TEXT }),
-        h2({ className: 'text-header-2', textContent: HEADER_TEXT }),
+        h2({ className: 'text-caption', textContent: HEADING_TEXT }),
+        p({ className: 'text-header-2', textContent: PARAGRAPH_TEXT }),
       ]),
       div({ className: styles['slider-container-outer'] }, [
-        ul(
-          { className: styles['slider-list'] },
-          SLIDER_ITEM_LIST.map((sliderItemData) =>
-            li({ className: styles['slider-list-item'] }, [SlideItem(sliderItemData)]),
-          ),
+        div(
+          { className: styles['slider-container-inner'] },
+          SLIDER_ITEM_LIST.map((item) => {
+            switch (item.type) {
+              case 'text': {
+                return span({ className: clsx(styles['slider-text'], 'text-slider-text'), textContent: item.text });
+              }
+              case 'image': {
+                return img({ className: styles['slider-image'], src: item.imageSrc, alt: '', inert: true });
+              }
+              default: {
+                throw new UnknownSliderItemTypeError();
+              }
+            }
+          }),
         ),
       ]),
       div({ className: styles['slider-buttons-container'] }, [
