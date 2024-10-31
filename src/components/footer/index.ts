@@ -25,7 +25,7 @@ const SOCIALS_LIST = [
   { iconName: Icon.X, text: 'x social link', href: '#' },
 ];
 
-const PARAGRAPH_TEXT = '\xa9 Copyright 2025, All Rights Reserved';
+const PARAGRAPH_TEXT = '© Copyright 2025, All Rights Reserved';
 const CAPTION_TEXT = 'Made in Rolling Scopes School';
 
 export default function Footer() {

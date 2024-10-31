@@ -1,10 +1,8 @@
 import clsx from 'clsx';
-import { Icon } from '~/assets/icons/icon.enum';
 import CHRISTMAS_TREE_BALL_IMAGE_SRC from '~/assets/images/christmas-tree-ball.webp';
 import CHRISTMAS_TREES_IMAGE_SRC from '~/assets/images/christmas-trees.webp';
 import FAIRYTALE_HOUSE_IMAGE_SRC from '~/assets/images/fairytale-house.webp';
 import SNOWMAN_IMAGE_SRC from '~/assets/images/snowman.webp';
-import SVGIcon from '~/components/svg-icon';
 import { button, div, h2, img, p, section, span } from '~/utils/create-element';
 import styles from './slider-section.module.css';
 
@@ -67,11 +65,11 @@ export default function SliderSection() {
       ]),
       div({ className: styles['slider-buttons-container'] }, [
         button({ className: styles['slider-button'] }, [
-          SVGIcon({ name: Icon.ARROW_LEFT }),
+          '🡠',
           span({ className: 'sr-only', textContent: SLIDER_PREV_BUTTON_TEXT }),
         ]),
         button({ className: styles['slider-button'] }, [
-          SVGIcon({ name: Icon.ARROW_RIGHT }),
+          '🡢',
           span({ className: 'sr-only', textContent: SLIDER_NEXT_BUTTON_TEXT }),
         ]),
       ]),
