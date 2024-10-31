@@ -10,7 +10,7 @@ const isProduction = process.env['NODE_ENV'] === 'production';
 export default {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    main: './src/app/routes/main.ts',
+    home: './src/app/routes/home.ts',
     gifts: './src/app/routes/gifts.ts',
   },
   output: {
@@ -21,7 +21,7 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: HTML_TEMPLATE_PATH,
-      chunks: ['main'],
+      chunks: ['home'],
       favicon: 'src/assets/icons/favicon.svg',
     }),
     new HtmlWebpackPlugin({
