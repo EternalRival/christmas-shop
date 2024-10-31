@@ -1,0 +1,75 @@
+.gifts-section {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: 60px 8px;
+
+  background-color: var(--color-primary);
+  background-image: url('../../assets/images/bg-garland.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 20px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    max-width: 1276px;
+    margin-inline: auto;
+  }
+
+  .heading {
+    max-width: 426px;
+    color: var(--color-static-white);
+    text-align: center;
+  }
+
+  .tab-list {
+    display: flex;
+    gap: 8px;
+    padding-left: 0;
+  }
+
+  .tab-list-item {
+    list-style: none;
+  }
+
+  .tab-button {
+    cursor: pointer;
+
+    padding: 12px 20px;
+
+    color: var(--color-static-white);
+
+    background-color: unset;
+    border: unset;
+    border-radius: 12px;
+
+    transition-duration: 250ms;
+    transition-property: background-color;
+
+    &.selected {
+      background-color: var(--color-static-white-20);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--color-static-white-20);
+      }
+    }
+  }
+
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+
+    padding-left: 0;
+  }
+
+  .card-list-item {
+    list-style: none;
+  }
+}

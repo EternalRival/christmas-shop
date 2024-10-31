@@ -58,6 +58,11 @@
       transition-duration: 250ms;
       transition-property: color, background-color;
 
+      &.selected {
+        color: var(--color-primary);
+        background-color: var(--color-primary-10);
+      }
+
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           color: var(--color-primary);

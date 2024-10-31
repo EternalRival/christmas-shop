@@ -42,7 +42,18 @@
   }
 
   .name {
+    cursor: pointer;
+
+    z-index: 1;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
     color: var(--color-dark);
+    text-overflow: ellipsis;
+
     transition-duration: 250ms;
     transition-property: color;
   }

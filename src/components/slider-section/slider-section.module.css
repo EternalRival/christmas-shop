@@ -1,5 +1,5 @@
 .slider-section {
-  overflow-x: clip;
+  overflow-x: hidden;
 
   max-width: 90rem;
   margin-inline: auto;

@@ -80,7 +80,7 @@ export default function GiftCard({ cardData }: GiftCardProps) {
         className: clsx(styles[getCategoryColoringSelectorByCategory(category)], 'text-header-4'),
         textContent: category,
       }),
-      h3({ className: clsx(styles['name'], 'text-header-3'), textContent: name }),
+      h3({ className: clsx(styles['name'], 'text-header-3'), textContent: name, title: name }),
       button({ className: styles['show-details-button'] }, [
         span({ className: 'sr-only', textContent: SHOW_DETAILS_BUTTON_TEXT }),
       ]),
