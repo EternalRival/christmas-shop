@@ -10,8 +10,8 @@ const HEADER_TEXT = 'especially for you';
 
 type GiftCardData = NonNullable<Parameters<typeof GiftCard>[number]['cardData']>;
 
-export default function BestGiftsSection({ gifts }: { gifts: GiftCardData[] }) {
-  return section({ className: styles['best-gifts-section'] }, [
+export default function BestGiftsSection({ gifts, widgetId }: { gifts: GiftCardData[]; widgetId?: string }) {
+  return section({ className: styles['best-gifts-section'], ...(widgetId && { id: widgetId }) }, [
     div({ className: styles['container'] }, [
       div({ className: styles['text-container'] }, [
         p({ className: 'text-caption', textContent: CAPTION_TEXT }),

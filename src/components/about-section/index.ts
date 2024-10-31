@@ -8,8 +8,8 @@ const PARAGRAPH_1_TEXT = 'Unleash your inner superhero!';
 const PARAGRAPH_2_TEXT =
   'This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.';
 
-export default function AboutSection() {
-  return section({ className: styles['about-section'] }, [
+export default function AboutSection(props?: { widgetId?: string }) {
+  return section({ className: styles['about-section'], ...(props?.widgetId && { id: props.widgetId }) }, [
     div({ className: styles['container'] }, [
       div({ className: styles['text-container-outer'] }, [
         div({ className: styles['text-container-inner'] }, [

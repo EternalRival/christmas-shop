@@ -42,8 +42,6 @@
   }
 
   .name {
-    cursor: pointer;
-
     z-index: 1;
 
     overflow: hidden;

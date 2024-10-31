@@ -1,13 +1,15 @@
+import isNonNullable from './is-non-nullable';
+
 type TagName = keyof HTMLElementTagNameMap;
 type Props<T extends TagName> = Partial<HTMLElementTagNameMap[T]>;
-type Children = Parameters<ParentNode['append']>;
+type Children = (string | Node | null | undefined)[];
 
 function createElementFactory<T extends TagName>(tagName: T) {
   return function createElement(props?: Props<T> | null, children?: Children): HTMLElementTagNameMap[T] {
     const element = Object.assign(document.createElement(tagName), props);
 
     if (children) {
-      element.append(...children);
+      element.append(...children.filter(isNonNullable));
     }
 
     return element;

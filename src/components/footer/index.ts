@@ -27,9 +27,10 @@ const SOCIALS_LIST = [
 
 const PARAGRAPH_TEXT = '© Copyright 2025, All Rights Reserved';
 const CAPTION_TEXT = 'Made in Rolling Scopes School';
+const RSSCHOOL_WEBSITE_URL = 'https://rs.school/';
 
-export default function Footer() {
-  return footer({ className: styles['footer'] }, [
+export default function Footer(props?: { widgetId?: string }) {
+  return footer({ className: styles['footer'], ...(props?.widgetId && { id: props.widgetId }) }, [
     div({ className: styles['container'] }, [
       ul(
         { className: styles['contacts-list'] },
@@ -54,7 +55,12 @@ export default function Footer() {
           ),
         ),
         p({ className: 'text-paragraph', textContent: PARAGRAPH_TEXT }),
-        a({ className: clsx(styles['school-link'], 'text-caption'), text: CAPTION_TEXT, href: '#', target: '_blank' }),
+        a({
+          className: clsx(styles['school-link'], 'text-caption'),
+          text: CAPTION_TEXT,
+          href: RSSCHOOL_WEBSITE_URL,
+          target: '_blank',
+        }),
       ]),
     ]),
   ]);

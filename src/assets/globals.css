@@ -14,7 +14,11 @@
   --color-content-background: #ecf3f8;
 }
 
-.body {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   background-color: var(--color-static-white);
 }
 
