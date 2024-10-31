@@ -18,7 +18,7 @@ export default function BestGiftsSection({ gifts, widgetId }: { gifts: GiftCardD
         h2({ className: clsx('text-header-2'), textContent: HEADER_TEXT }),
       ]),
       ul(
-        { className: styles['cards-list'] },
+        { className: clsx(styles['cards-list']) },
         BEST_GIFTS_NAME_LIST.map((name) =>
           li({ className: styles['cards-list-item'] }, [
             GiftCard({ cardData: gifts.find((gift) => gift.name === name) }),

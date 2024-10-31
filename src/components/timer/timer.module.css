@@ -15,7 +15,7 @@
 
   .timer-item:not(:last-child) {
     &::before {
-      --height: 20px;
+      --height: 1.25rem;
 
       content: '';
 
@@ -25,7 +25,7 @@
 
       display: block;
 
-      width: 1px;
+      width: 0.0625rem;
       height: var(--height);
 
       background-color: var(--color-static-white-40);
