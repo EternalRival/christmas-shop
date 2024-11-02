@@ -5,6 +5,11 @@ import { a, div, header, input, label, li, nav, ul } from '~/utils/create-elemen
 import isCurrentRoute from '~/utils/is-current-route';
 import styles from './header.module.css';
 
+// TODO вынести в utils
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function NavMenu({ linkList }: { linkList: { text: string; href: string }[] }) {
   return nav({ className: styles['nav-menu'] }, [
     ul(
@@ -30,7 +35,7 @@ export default function Header(props?: { logoUrl?: string; menuLinkList?: { text
     type: 'checkbox',
     onchange: () => {
       if (burgerCheckbox.checked) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollToTop();
       }
     },
   });
