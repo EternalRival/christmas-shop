@@ -40,11 +40,15 @@ export default function Header(props?: { logoUrl?: string; menuLinkList?: { text
     },
   });
 
+  const closeBurger = () => {
+    burgerCheckbox.checked = false;
+  }
+
   if (navMenu) {
     const resizeObserver = new ResizeObserver((entries) => {
       entries.forEach(({ contentRect }) => {
         if (contentRect.width !== document.documentElement.clientWidth) {
-          burgerCheckbox.checked = false;
+          closeBurger();
         }
       });
     });
