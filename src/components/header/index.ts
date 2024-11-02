@@ -1,14 +1,10 @@
 import clsx from 'clsx';
 import { Icon } from '~/assets/icons/icon.enum';
 import SVGIcon from '~/components/svg-icon';
-import { a, div, header, input, label, li, nav, ul } from '~/utils/create-element';
+import { a, div, header, input, label, li, nav, span, ul } from '~/utils/create-element';
 import isCurrentRoute from '~/utils/is-current-route';
 import styles from './header.module.css';
-
-// TODO вынести в utils
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+import scrollWindowToTop from '~/utils/scroll-window-to-top';
 
 function NavMenu({ linkList }: { linkList: { text: string; href: string }[] }) {
   return nav({ className: styles['nav-menu'] }, [
@@ -35,7 +31,7 @@ export default function Header(props?: { logoUrl?: string; menuLinkList?: { text
     type: 'checkbox',
     onchange: () => {
       if (burgerCheckbox.checked) {
-        scrollToTop();
+        scrollWindowToTop();
       }
     },
   });
@@ -65,7 +61,10 @@ export default function Header(props?: { logoUrl?: string; menuLinkList?: { text
 
       navMenu,
 
-      label({ className: styles['burger'] }, [burgerCheckbox]),
+      label({ className: styles['burger'] }, [
+        burgerCheckbox,
+        span({ className: 'sr-only', textContent: 'menu open/close button' }),
+      ]),
     ]),
   ]);
 }
