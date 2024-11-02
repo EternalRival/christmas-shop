@@ -53,7 +53,7 @@
     transition-duration: 250ms;
     transition-property: background-color;
 
-    &.selected {
+    &[inert] {
       background-color: var(--color-static-white-20);
     }
 

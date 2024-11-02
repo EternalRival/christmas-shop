@@ -23,7 +23,7 @@ export default function GiftsSection({ gifts }: { gifts: GiftCardData[] }) {
         TABS_NAME_LIST.map((name) =>
           li({ className: styles['tab-list-item'] }, [
             button({
-              className: clsx(styles['tab-button'], 'text-action-small', isCurrentTab(name) && styles['selected']),
+              className: clsx(styles['tab-button'], 'text-action-small'),
               textContent: name,
               inert: isCurrentTab(name),
             }),
