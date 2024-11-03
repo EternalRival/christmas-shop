@@ -23,8 +23,8 @@
 4. Best Gifts
    - [x] When opening and refreshing the page, 4 random cards are displayed in the block **Best Gifts** on the `home` page: **+4**
 5. Implementation of the **Category switching** for products on the `gifts` page: **+6**
-   - [ ] The **ALL** category is active and all gifts are displayed when opening or reloading the `gifts` page: **+2**
-   - [ ] When switching categories, the gifts of the selected category are displayed: **+4**
+   - [x] The **ALL** category is active and all gifts are displayed when opening or reloading the `gifts` page: **+2**
+   - [x] When switching categories, the gifts of the selected category are displayed: **+4**
 6. Implementation of the **Button UP** on the `gifts` page: **+14**
    - [ ] The button can only appear at a screen width of 768px and less: **+4**
    - [ ] At the top of the page, the button is not displayed: **+4**
