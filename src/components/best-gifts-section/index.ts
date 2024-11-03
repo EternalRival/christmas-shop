@@ -3,12 +3,25 @@ import GiftCard from '~/components/gift-card';
 import { div, h2, li, p, section, ul } from '~/utils/create-element';
 import styles from './best-gifts-section.module.css';
 
-const BEST_GIFTS_NAME_LIST = ['Console.log Guru', 'Hydration Bot', 'Merge Master', 'Spontaneous Coding Philosopher'];
-
 const CAPTION_TEXT = 'Best Gifts';
 const HEADER_TEXT = 'especially for you';
 
 type GiftCardData = NonNullable<Parameters<typeof GiftCard>[number]['cardData']>;
+
+function getRandomGifts(gifts: GiftCardData[], count: number) {
+  const randomGifts = new Set<GiftCardData>();
+  const maxIndex = gifts.length - 1;
+
+  while (randomGifts.size < count) {
+    const randomGift = gifts[Math.floor(Math.random() * maxIndex)];
+
+    if (randomGift) {
+      randomGifts.add(randomGift);
+    }
+  }
+
+  return Array.from(randomGifts);
+}
 
 export default function BestGiftsSection({ gifts, widgetId }: { gifts: GiftCardData[]; widgetId?: string }) {
   return section({ className: styles['best-gifts-section'], ...(widgetId && { id: widgetId }) }, [
@@ -19,10 +32,8 @@ export default function BestGiftsSection({ gifts, widgetId }: { gifts: GiftCardD
       ]),
       ul(
         { className: clsx(styles['cards-list']) },
-        BEST_GIFTS_NAME_LIST.map((name) =>
-          li({ className: styles['cards-list-item'] }, [
-            GiftCard({ cardData: gifts.find((gift) => gift.name === name) }),
-          ]),
+        getRandomGifts(gifts, 4).map((gift) =>
+          li({ className: styles['cards-list-item'] }, [GiftCard({ cardData: gift })]),
         ),
       ),
     ]),

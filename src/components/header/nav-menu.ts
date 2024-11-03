@@ -3,27 +3,6 @@ import { a, li, nav, ul } from '~/utils/create-element';
 import isCurrentRoute from '~/utils/is-current-route';
 import styles from './header.module.css';
 
-/* export default function NavMenu({ linkList }: { linkList?: { text: string; href: string }[] } = {}) {
-  return (
-    linkList &&
-    nav({ className: styles['nav-menu'] }, [
-      ul(
-        { className: styles['nav-list'] },
-        linkList.map(({ text, href }) =>
-          li({ className: styles['nav-item'] }, [
-            a({
-              className: clsx(styles['nav-link'], 'text-action-small', isCurrentRoute(href) && styles['selected']),
-              href,
-              text,
-              inert: isCurrentRoute(href),
-            }),
-          ]),
-        ),
-      ),
-    ])
-  );
-} */
-
 export default class NavMenu {
   private readonly node?: HTMLElement;
 
@@ -38,13 +17,12 @@ export default class NavMenu {
         ul(
           { className: styles['nav-list'] },
           linkList.map(({ text, href }) =>
-            li({ className: styles['nav-item'] }, [
+            li({ className: styles['nav-item'], onclick: onClose }, [
               a({
                 className: clsx(styles['nav-link'], 'text-action-small'),
                 href,
                 text,
                 inert: isCurrentRoute(href),
-                onclick: onClose,
               }),
             ]),
           ),
