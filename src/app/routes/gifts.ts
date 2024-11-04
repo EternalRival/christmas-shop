@@ -6,6 +6,9 @@ import Header from '~/components/header';
 import { main } from '~/utils/create-element';
 import { Route } from './route.enum';
 import { WidgetId } from './widget-id.enum';
+import BackToTopButton from '~/components/back-to-top-button';
+
+const backToTopButton = new BackToTopButton();
 
 document.body.append(
   Header({
@@ -17,6 +20,6 @@ document.body.append(
       { text: 'contacts', href: `#${WidgetId.CONTACTS}` },
     ],
   }),
-  main(null, [GiftsSection({ gifts: GIFTS_DATA })]),
+  main(null, [GiftsSection({ gifts: GIFTS_DATA }), backToTopButton.getNode()]),
   Footer({ widgetId: WidgetId.CONTACTS }),
 );

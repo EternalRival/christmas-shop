@@ -1,0 +1,35 @@
+.floating-up-button {
+  --offset: 0.5rem;
+  --size: 3.5rem;
+
+  cursor: pointer;
+
+  position: fixed;
+  z-index: 1;
+  right: var(--offset);
+  bottom: var(--offset);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--size);
+  height: var(--size);
+
+  color: var(--color-primary);
+
+  background-color: var(--color-static-white);
+  border: 0.0625rem solid var(--color-primary);
+  border-radius: 50%;
+
+  transition-duration: 250ms;
+  transition-property: bottom;
+
+  &.hidden {
+    bottom: calc(-1 * (var(--size) + var(--offset)));
+  }
+
+  @media (width > 48rem) {
+    display: none;
+  }
+}
