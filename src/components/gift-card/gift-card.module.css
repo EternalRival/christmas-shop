@@ -12,11 +12,6 @@
   background-color: var(--color-content-background);
   border-radius: var(--border-radius);
 
-  .image {
-    width: 19.375rem;
-    height: 14.375rem;
-  }
-
   .text-container {
     display: flex;
     flex-direction: column;
@@ -26,19 +21,7 @@
     padding: 1.25rem;
 
     background-color: var(--color-static-white);
-    border-radius: 1.25rem;
-  }
-
-  .for-harmony-heading {
-    color: var(--color-tag-pink);
-  }
-
-  .for-health-heading {
-    color: var(--color-tag-green);
-  }
-
-  .for-work-heading {
-    color: var(--color-tag-purple);
+    border-radius: var(--border-radius);
   }
 
   .name {

@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 import GiftCard from '~/components/gift-card';
+import type { GiftCardData } from '~/types/gift-data.type';
 import { div, h2, li, p, section, ul } from '~/utils/create-element';
 import styles from './best-gifts-section.module.css';
 
 const CAPTION_TEXT = 'Best Gifts';
 const HEADER_TEXT = 'especially for you';
-
-type GiftCardData = NonNullable<Parameters<typeof GiftCard>[number]['cardData']>;
 
 function getRandomGifts(gifts: GiftCardData[], count: number) {
   const randomGifts = new Set<GiftCardData>();
@@ -33,7 +32,7 @@ export default function BestGiftsSection({ gifts, widgetId }: { gifts: GiftCardD
       ul(
         { className: clsx(styles['cards-list']) },
         getRandomGifts(gifts, 4).map((gift) =>
-          li({ className: styles['cards-list-item'] }, [GiftCard({ cardData: gift })]),
+          li({ className: styles['cards-list-item'] }, [GiftCard({ giftData: gift })]),
         ),
       ),
     ]),

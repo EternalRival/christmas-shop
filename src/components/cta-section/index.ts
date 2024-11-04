@@ -1,8 +1,8 @@
 import clsx from 'clsx';
+import ExploreButton from '~/components/explore-button';
+import TimeUntilNewYear from '~/components/timer-until-new-year';
 import { div, h2, p, section } from '~/utils/create-element';
 import styles from './cta-section.module.css';
-import ExploreButton from '../explore-button';
-import TimeUntilNewYear from '../timer';
 
 const HEADING_TEXT = 'Ready to start your journey to a better version of yourself?';
 const TIMER_CAPTION_TEXT = 'The New Year is Coming Soon...';

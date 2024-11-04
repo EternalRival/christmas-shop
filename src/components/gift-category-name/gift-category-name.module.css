@@ -1,0 +1,11 @@
+.for-harmony-heading {
+  color: var(--color-tag-pink);
+}
+
+.for-health-heading {
+  color: var(--color-tag-green);
+}
+
+.for-work-heading {
+  color: var(--color-tag-purple);
+}

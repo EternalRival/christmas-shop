@@ -1,9 +1,9 @@
-import { button } from '~/utils/create-element';
-import SVGIcon from '../svg-icon';
-import { Icon } from '~/assets/icons/icon.enum';
-import styles from './back-to-top-button.module.css';
-import scrollWindowToTop from '~/utils/scroll-window-to-top';
 import clsx from 'clsx';
+import { Icon } from '~/assets/icons/icon.enum';
+import SVGIcon from '~/components/svg-icon';
+import { button } from '~/utils/create-element';
+import scrollWindowToTop from '~/utils/scroll-window-to-top';
+import styles from './back-to-top-button.module.css';
 
 export default class BackToTopButton {
   private readonly node: HTMLButtonElement;

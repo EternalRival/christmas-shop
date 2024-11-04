@@ -1,8 +1,7 @@
+import GiftCard from '~/components/gift-card';
+import type { GiftCardData } from '~/types/gift-data.type';
 import { li, ul } from '~/utils/create-element';
-import GiftCard from '../gift-card';
 import styles from './gifts-section.module.css';
-
-type GiftCardData = NonNullable<Parameters<typeof GiftCard>[number]['cardData']>;
 
 export default class GiftList {
   private readonly node: HTMLUListElement;
@@ -27,7 +26,7 @@ export default class GiftList {
 
   private createGiftListItems(category: string) {
     return this.getFilteredGifts(category).map((gift) =>
-      li({ className: styles['card-list-item'] }, [GiftCard({ cardData: gift })]),
+      li({ className: styles['card-list-item'] }, [GiftCard({ giftData: gift })]),
     );
   }
 

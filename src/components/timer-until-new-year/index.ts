@@ -1,8 +1,8 @@
-import { div, span } from '~/utils/create-element';
-import styles from './timer.module.css';
 import clsx from 'clsx';
-import parseTimeFromMilliseconds from './parse-time-from-milliseconds';
+import { div, span } from '~/utils/create-element';
 import getTimeUntilNewYearInUTC0 from './get-time-until-new-year-in-utc0';
+import parseTimeFromMilliseconds from './parse-time-from-milliseconds';
+import styles from './timer-until-new-year.module.css';
 
 const DAYS_TEXT = 'days';
 const HOURS_TEXT = 'hours';

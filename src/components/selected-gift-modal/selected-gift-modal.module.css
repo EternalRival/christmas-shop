@@ -1,0 +1,125 @@
+.selected-gift-modal {
+  --border-radius: 1.25rem;
+
+  max-width: calc(100dvw - 1rem);
+  max-height: calc(100dvh - 1rem);
+  padding: 0;
+
+  border: unset;
+  border-radius: var(--border-radius);
+
+  &::backdrop {
+    padding: 0.5rem;
+    background-color: var(--color-dark-80);
+  }
+
+  .container {
+    max-width: 25rem;
+    background-color: var(--color-content-background);
+  }
+
+  .description-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.25rem;
+
+    padding: 1.25rem;
+
+    background-color: var(--color-static-white);
+    border-radius: var(--border-radius);
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .superpowers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .superpower-list {
+    padding-left: 0;
+  }
+
+  .superpower-list-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    list-style: none;
+  }
+
+  .superpower-name {
+    flex-grow: 1;
+    text-transform: capitalize;
+  }
+
+  .snowflake-list {
+    display: flex;
+    gap: 0.5rem;
+    padding-left: 0;
+  }
+
+  .snowflake-list-item {
+    list-style: none;
+  }
+
+  .snowflake-icon {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-primary);
+
+    &.transparent {
+      color: var(--color-primary-10);
+    }
+  }
+
+  .close-button {
+    cursor: pointer;
+
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: unset;
+
+    background-color: unset;
+    border: unset;
+
+    &::before,
+    &::after {
+      content: '';
+
+      display: block;
+
+      width: calc(1.25rem * sqrt(2));
+      height: 0.125rem;
+
+      background-color: var(--color-dark);
+    }
+
+    &::before {
+      transform: translateY(0.0625rem) rotate(0.375turn);
+    }
+
+    &::after {
+      transform: translateY(-0.0625rem) rotate(0.625turn);
+    }
+  }
+}
+
+body:has(dialog[open]) {
+  overflow-y: hidden;
+}
