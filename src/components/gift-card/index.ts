@@ -14,9 +14,7 @@ export default function GiftCard({ giftData }: { giftData?: GiftCardData }) {
     throw new RequiredError('cardData');
   }
 
-  const { name, description, category, superpowers } = giftData;
-
-  void { description, superpowers };
+  const { name, category } = giftData;
 
   return article({ className: styles['card'] }, [
     GiftCategoryImage({ category }),
@@ -28,9 +26,9 @@ export default function GiftCard({ giftData }: { giftData?: GiftCardData }) {
       {
         className: styles['show-details-button'],
         onclick: () => {
-          const selectedGiftModal = SelectedGiftModal({ giftData });
-          document.body.append(selectedGiftModal);
-          selectedGiftModal.showModal();
+          const selectedGiftModal = new SelectedGiftModal({ giftData });
+          document.body.append(selectedGiftModal.getNode());
+          selectedGiftModal.openDialog();
         },
       },
       [span({ className: 'sr-only', textContent: SHOW_DETAILS_BUTTON_TEXT })],

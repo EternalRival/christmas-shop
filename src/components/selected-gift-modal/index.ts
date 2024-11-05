@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import { Icon } from '~/assets/icons/icon.enum';
+import Dialog from '~/components/dialog';
 import GiftCategoryImage from '~/components/gift-category-image';
 import GiftCategoryName from '~/components/gift-category-name';
 import SVGIcon from '~/components/svg-icon';
 import type { GiftCardData } from '~/types/gift-data.type';
-import { article, button, dialog, div, h3, li, p, span, ul } from '~/utils/create-element';
-import RequiredError from '~/utils/required.error';
+import { article, button, div, h3, li, p, span, ul } from '~/utils/create-element';
 import styles from './selected-gift-modal.module.css';
 
 const CLOSE_BUTTON_TEXT = 'close details';
@@ -24,33 +24,38 @@ const SUPERPOWER_SNOWFLAKES_MAP: Record<string, SuperpowerSnowflakeList> = {
   '+500': [true, true, true, true, true],
 };
 
-function getSuperpowerSnowflakeList(
-  giftData: GiftCardData,
-  superpowerName: SuperpowerName,
-): SuperpowerSnowflakeList | null {
-  return SUPERPOWER_SNOWFLAKES_MAP[giftData.superpowers[superpowerName]] ?? null;
+function SnowflakeList({ giftData, superpowerName }: { giftData: GiftCardData; superpowerName: SuperpowerName }) {
+  const superpowerSnowflakeList = SUPERPOWER_SNOWFLAKES_MAP[giftData.superpowers[superpowerName]];
+
+  return ul(
+    { className: styles['snowflake-list'] },
+    superpowerSnowflakeList?.map((isFilled) =>
+      li({ className: styles['snowflake-list-item'] }, [
+        SVGIcon({
+          name: Icon.SNOWFLAKE,
+          className: clsx(styles['snowflake-icon'], !isFilled && styles['transparent']),
+        }),
+      ]),
+    ),
+  );
 }
 
-export default function SelectedGiftModal({ giftData }: { giftData?: GiftCardData }) {
-  if (!giftData) {
-    throw new RequiredError('giftData');
-  }
+function SuperpowerList({ giftData }: { giftData: GiftCardData }) {
+  return ul(
+    { className: styles['superpower-list'] },
+    SUPERPOWER_NAME_LIST.map((superpowerName) =>
+      li({ className: styles['superpower-list-item'] }, [
+        span({ className: clsx(styles['superpower-name'], 'text-paragraph'), textContent: superpowerName }),
+        span({ className: 'text-paragraph', textContent: giftData.superpowers[superpowerName] }),
+        SnowflakeList({ giftData, superpowerName }),
+      ]),
+    ),
+  );
+}
 
-  return dialog(
-    {
-      className: styles['selected-gift-modal'],
-      oncancel: (event) => {
-        if (event.target instanceof HTMLDialogElement) {
-          event.target.close();
-        }
-      },
-      onclick: (event) => {
-        if (event.target === event.currentTarget && event.target instanceof HTMLDialogElement) {
-          event.target.remove();
-        }
-      },
-    },
-    [
+export default class SelectedGiftModal extends Dialog {
+  constructor({ giftData }: { giftData: GiftCardData }) {
+    super({ className: styles['selected-gift-modal'] }, [
       article({ className: styles['container'] }, [
         GiftCategoryImage({ category: giftData.category }),
         div({ className: styles['description-container'] }, [
@@ -61,40 +66,20 @@ export default function SelectedGiftModal({ giftData }: { giftData?: GiftCardDat
           ]),
           div({ className: styles['superpowers-container'] }, [
             span({ className: 'text-header-4', textContent: SUPERPOWERS_HEADING_TEXT }),
-            ul(
-              { className: styles['superpower-list'] },
-              SUPERPOWER_NAME_LIST.map((superpowerName) =>
-                li({ className: styles['superpower-list-item'] }, [
-                  span({ className: clsx(styles['superpower-name'], 'text-paragraph'), textContent: superpowerName }),
-                  span({ className: 'text-paragraph', textContent: giftData.superpowers[superpowerName] }),
-                  ul(
-                    { className: styles['snowflake-list'] },
-                    getSuperpowerSnowflakeList(giftData, superpowerName)?.map((isFilled) =>
-                      li({ className: styles['snowflake-list-item'] }, [
-                        SVGIcon({
-                          name: Icon.SNOWFLAKE,
-                          className: clsx(styles['snowflake-icon'], !isFilled && styles['transparent']),
-                        }),
-                      ]),
-                    ),
-                  ),
-                ]),
-              ),
-            ),
+            SuperpowerList({ giftData }),
           ]),
         ]),
       ]),
+
       button(
         {
           className: styles['close-button'],
-          onclick: (event) => {
-            if (event.target instanceof HTMLButtonElement) {
-              event.target.closest('dialog')?.remove();
-            }
+          onclick: () => {
+            this.closeDialog();
           },
         },
         [span({ className: 'sr-only', textContent: CLOSE_BUTTON_TEXT })],
       ),
-    ],
-  );
+    ]);
+  }
 }
