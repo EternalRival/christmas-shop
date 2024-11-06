@@ -31,14 +31,13 @@
     margin-inline: auto;
   }
 
-  .slider-container-outer {
-    /* jic */
-  }
-
-  .slider-container-inner {
+  .slider-container {
     display: flex;
     gap: 1.25rem;
     align-items: center;
+
+    transition-duration: 250ms;
+    transition-property: transform;
   }
 
   .slider-text {
@@ -78,13 +77,13 @@
     transition-duration: 250ms;
     transition-property: color, background-color;
 
-    &:disabled {
+    &[inert] {
       color: var(--color-static-white-40);
       background-color: var(--color-static-white-40);
     }
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover {
+      &:hover:not([inert]) {
         color: var(--color-primary);
         background-color: var(--color-static-white);
       }
