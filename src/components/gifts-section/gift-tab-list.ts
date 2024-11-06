@@ -15,6 +15,10 @@ export default class GiftTabList<TabName extends string> {
     this.onTabClick = onTabClick;
   }
 
+  public getNode() {
+    return this.node;
+  }
+
   private createTabListItems({ tabNameList }: { tabNameList: TabName[] }) {
     this.state.currentTab ??= tabNameList[0] ?? null;
 
@@ -32,9 +36,5 @@ export default class GiftTabList<TabName extends string> {
         }),
       ]),
     );
-  }
-
-  public getNode() {
-    return this.node;
   }
 }

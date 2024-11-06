@@ -17,15 +17,15 @@ export default class BackToTopButton {
     this.initAutoHiding();
   }
 
+  public getNode() {
+    return this.node;
+  }
+
   private initAutoHiding() {
     window.addEventListener('scroll', () => {
       if ('hidden' in styles) {
-        this.node.classList.toggle(styles['hidden'], window.scrollY < 1);
+        this.getNode().classList.toggle(styles['hidden'], window.scrollY < 1);
       }
     });
-  }
-
-  public getNode() {
-    return this.node;
   }
 }

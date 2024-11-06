@@ -6,6 +6,7 @@
 
 ## BulletProof
 
+```md
 src
 ├── app               # application layer containing:
 │   ├── routes        # application routes / can also be called pages
@@ -31,3 +32,4 @@ src/features/awesome-feature
 ├── stores      # state stores for a specific feature
 ├── types       # typescript types used within the feature
 └── utils       # utility functions for a specific feature
+```

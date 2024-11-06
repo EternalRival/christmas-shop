@@ -15,6 +15,15 @@ export default class Dialog {
     );
   }
 
+  public getNode() {
+    return this.node;
+  }
+
+  public async openDialog() {
+    this.getNode().showModal();
+    await animateDialog(this.getNode(), 'in');
+  }
+
   protected async closeDialog(returnValue?: string) {
     await animateDialog(this.getNode(), 'out');
     this.getNode().close(returnValue);
@@ -31,13 +40,4 @@ export default class Dialog {
       this.closeDialog('cancel').catch(console.error);
     }
   };
-
-  public getNode() {
-    return this.node;
-  }
-
-  public async openDialog() {
-    this.getNode().showModal();
-    await animateDialog(this.getNode(), 'in');
-  }
 }

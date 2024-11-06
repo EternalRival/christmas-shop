@@ -8,12 +8,15 @@ function getCategoryColoringSelectorByCategory(category: string) {
     case 'For Harmony': {
       return 'for-harmony-heading';
     }
+
     case 'For Health': {
       return 'for-health-heading';
     }
+
     case 'For Work': {
       return 'for-work-heading';
     }
+
     default: {
       throw new UnknownGiftCategoryError(category);
     }

@@ -1,5 +1,7 @@
-import { button, span } from '~/utils/create-element';
+import { button } from '~/utils/create-element';
 import styles from './header.module.css';
+
+const BURGER_BUTTON_LABEL = 'navigation menu';
 
 export default class BurgerButton {
   private readonly node: HTMLButtonElement;
@@ -9,23 +11,15 @@ export default class BurgerButton {
   private readonly onChangeOpenState?: (newState: boolean) => void;
 
   constructor({ onChangeOpenState }: { onChangeOpenState?: (newState: boolean) => void } = {}) {
-    this.node = button(
-      {
-        className: styles['burger'],
-        onclick: () => {
-          this.toggleOpen();
-        },
+    this.node = button({
+      className: styles['burger'],
+      onclick: () => {
+        this.toggleOpen();
       },
-      [span({ className: 'sr-only', textContent: 'navigation menu' })],
-    );
+      ariaLabel: BURGER_BUTTON_LABEL,
+    });
 
     this.onChangeOpenState = onChangeOpenState;
-  }
-
-  private toggleOpenClassName(): void {
-    if ('open' in styles) {
-      this.node.classList.toggle(styles['open'], this.isOpen());
-    }
   }
 
   public getNode(): Readonly<HTMLButtonElement> {
@@ -42,5 +36,11 @@ export default class BurgerButton {
     this.onChangeOpenState?.(this.isOpen());
 
     this.toggleOpenClassName();
+  }
+
+  private toggleOpenClassName(): void {
+    if ('open' in styles) {
+      this.getNode().classList.toggle(styles['open'], this.isOpen());
+    }
   }
 }

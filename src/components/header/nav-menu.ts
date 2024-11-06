@@ -29,7 +29,9 @@ export default class NavMenu {
       ]);
 
     if (onResize) {
-      if (!this.node) {
+      const node = this.getNode();
+
+      if (!node) {
         throw new Error(`${NavMenu.name} node is not defined`);
       }
 
@@ -39,7 +41,7 @@ export default class NavMenu {
         });
       });
 
-      resizeObserver.observe(this.node);
+      resizeObserver.observe(node);
     }
   }
 

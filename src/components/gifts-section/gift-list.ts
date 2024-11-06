@@ -14,6 +14,14 @@ export default class GiftList {
     this.node = ul({ className: styles['card-list'] }, this.createGiftListItems('All'));
   }
 
+  public getNode() {
+    return this.node;
+  }
+
+  public updateGiftListItemsByCategory(category: string) {
+    this.getNode().replaceChildren(...this.createGiftListItems(category));
+  }
+
   private getFilteredGifts(category: string): GiftCardData[] {
     const gifts = this.state.gifts ?? [];
 
@@ -28,13 +36,5 @@ export default class GiftList {
     return this.getFilteredGifts(category).map((gift) =>
       li({ className: styles['card-list-item'] }, [GiftCard({ giftData: gift })]),
     );
-  }
-
-  public getNode() {
-    return this.node;
-  }
-
-  public updateGiftListItemsByCategory(category: string) {
-    this.getNode().replaceChildren(...this.createGiftListItems(category));
   }
 }

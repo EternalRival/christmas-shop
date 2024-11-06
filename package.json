@@ -8,8 +8,9 @@
     "build": "webpack --mode=production --node-env=production",
     "dev": "webpack serve",
     "format": "prettier -luw .",
+    "lint": "npx eslint . --fix",
     "stylelint": "npx stylelint \"src/**/*.css\" --fix",
-    "fix": "npm run format && npm run stylelint",
+    "fix": "npm run format && npm run lint && npm run stylelint",
     "deploy": "npm run build && netlify deploy --prod --dir=dist"
   },
   "repository": {
@@ -23,7 +24,11 @@
   },
   "homepage": "https://github.com/EternalRival/christmas-shop#readme",
   "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@stylistic/eslint-plugin": "^2.10.1",
     "css-loader": "^7.1.2",
+    "eslint": "^9.14.0",
+    "globals": "^15.12.0",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.1",
     "netlify-cli": "^17.37.1",
@@ -33,6 +38,7 @@
     "stylelint-config-clean-order": "^6.1.0",
     "stylelint-config-standard": "^36.0.1",
     "ts-loader": "^9.5.1",
+    "typescript-eslint": "^8.13.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"

@@ -8,7 +8,7 @@ import type { GiftCardData } from '~/types/gift-data.type';
 import { article, button, div, h3, li, p, span, ul } from '~/utils/create-element';
 import styles from './selected-gift-modal.module.css';
 
-const CLOSE_BUTTON_TEXT = 'close details';
+const CLOSE_BUTTON_LABEL = 'close details';
 const SUPERPOWERS_HEADING_TEXT = 'Adds superpowers to:';
 
 type SuperpowerName = 'live' | 'create' | 'love' | 'dream';
@@ -71,15 +71,13 @@ export default class SelectedGiftModal extends Dialog {
         ]),
       ]),
 
-      button(
-        {
-          className: styles['close-button'],
-          onclick: () => {
-            this.closeDialog();
-          },
+      button({
+        className: styles['close-button'],
+        onclick: () => {
+          this.closeDialog();
         },
-        [span({ className: 'sr-only', textContent: CLOSE_BUTTON_TEXT })],
-      ),
+        ariaLabel: CLOSE_BUTTON_LABEL,
+      }),
     ]);
   }
 }

@@ -16,11 +16,16 @@ function getParsedTimeUntilNewYear(): ParsedTime {
 }
 
 export default class TimeUntilNewYear {
-  node: HTMLElement;
+  public node: HTMLElement;
+
   constructor() {
     this.node = div({ className: styles['timer'] }, this.create(getParsedTimeUntilNewYear()));
 
     this.initAutoUpdater({ delay: 1000 });
+  }
+
+  public getNode() {
+    return this.node;
   }
 
   private create({ days, hours, minutes, seconds }: ParsedTime) {
@@ -45,9 +50,5 @@ export default class TimeUntilNewYear {
     setInterval(() => {
       this.update({ newTime: getParsedTimeUntilNewYear() });
     }, delay);
-  }
-
-  public getNode() {
-    return this.node;
   }
 }

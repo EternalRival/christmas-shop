@@ -6,8 +6,8 @@ import FAIRYTALE_HOUSE_IMAGE_SRC from '~/assets/images/fairytale-house.webp';
 import SNOWMAN_IMAGE_SRC from '~/assets/images/snowman.webp';
 import SVGIcon from '~/components/svg-icon';
 import { button, div, h2, img, p, section, span } from '~/utils/create-element';
-import PaginationService from '~/utils/pagination.service';
 import styles from './slider-section.module.css';
+import SliderService from './slider.service';
 
 type SliderItem =
   | {
@@ -32,8 +32,8 @@ const SLIDER_ITEM_LIST: SliderItem[] = [
 
 const HEADING_TEXT = 'Become Happier!';
 const PARAGRAPH_TEXT = 'in the new 2025';
-const SLIDER_PREV_BUTTON_TEXT = 'previous slide button';
-const SLIDER_NEXT_BUTTON_TEXT = 'next slide button';
+const SLIDER_PREV_BUTTON_LABEL = 'previous slide button';
+const SLIDER_NEXT_BUTTON_LABEL = 'next slide button';
 
 class UnknownSliderItemTypeError extends Error {
   constructor() {
@@ -54,8 +54,10 @@ export default function SliderSection() {
         case 'text': {
           return span({ className: clsx(styles['slider-text'], 'text-slider-text'), textContent: item.text });
         }
+
         case 'image': {
-          return img({            className: styles['slider-image'],
+          return img({
+            className: styles['slider-image'],
             width: 200,
             height: 200,
             src: item.imageSrc,
@@ -63,6 +65,7 @@ export default function SliderSection() {
             inert: true,
           });
         }
+
         default: {
           throw new UnknownSliderItemTypeError();
         }
@@ -74,77 +77,36 @@ export default function SliderSection() {
   const heading = h2({ className: 'text-caption', textContent: HEADING_TEXT });
   const paragraph = p({ className: 'text-header-2', textContent: PARAGRAPH_TEXT });
 
-  const prevButton = button({ className: styles['slider-button'] }, [
+  const prevButton = button({ className: styles['slider-button'], ariaLabel: SLIDER_PREV_BUTTON_LABEL }, [
     SVGIcon({ name: Icon.ARROW_LEFT }),
-    span({ className: 'sr-only', textContent: SLIDER_PREV_BUTTON_TEXT }),
   ]);
-  const nextButton = button({ className: styles['slider-button'] }, [
+  const nextButton = button({ className: styles['slider-button'], ariaLabel: SLIDER_NEXT_BUTTON_LABEL }, [
     SVGIcon({ name: Icon.ARROW_RIGHT }),
-    span({ className: 'sr-only', textContent: SLIDER_NEXT_BUTTON_TEXT }),
   ]);
 
-  const getStepsValue = () => {
-    return sliderSection.clientWidth > 768 ? 3 : 6;
-  };
+  const sliderService = new SliderService({
+    getPadding: () => Number.parseInt(window.getComputedStyle(sliderSection).paddingInline, 10),
+    getMargin: () => Number.parseInt(window.getComputedStyle(container).marginInline, 10),
+    getWrapperWidth: () => sliderSection.clientWidth,
+    getContainerWidth: () => sliderContainer.scrollWidth,
+    getMaxStepsValue: () => (window.innerWidth >= 768 ? 3 : 6),
+    getElementToObserveResize: () => sliderSection,
+    onOffsetChange: ({ newOffset }) => {
+      sliderContainer.style.transform = `translateX(-${newOffset}px)`;
+    },
+    onSlideChange: ({ isFirst, isLast }) => {
+      prevButton.disabled = isFirst;
+      nextButton.disabled = isLast;
+    },
+  });
 
-  const pagination = new PaginationService({ page: 0, min: 0, max: getStepsValue() });
-
-  const updateButtonsState = () => {
-    prevButton.inert = pagination.isFirst();
-    nextButton.inert = pagination.isLast();
-  };
-
-  const updateSliderOffset = () => {
-    const padding = Number.parseInt(window.getComputedStyle(sliderSection).paddingInline, 10);
-    const margin = Number.parseInt(window.getComputedStyle(container).marginInline, 10);
-
-    const wrapperWidth = sliderSection.clientWidth;
-    const containerWidth = sliderContainer.scrollWidth;
-
-    const value = (pagination.getPage() * (containerWidth - (wrapperWidth - (padding + margin) * 2))) / getStepsValue();
-
-    sliderContainer.style.transform = `translateX(-${value}px)`;
-  };
-
-  const handlePrevClick = () => {
-    pagination.prev();
-    updateSliderOffset();
-    updateButtonsState();
-  };
-
-  const handleNextClick = () => {
-    pagination.next();
-    updateSliderOffset();
-    updateButtonsState();
-  };
-
-  const handleSliderWrapperResize = () => {
-    const currentMax = pagination.getMax();
-    const expectedMax = getStepsValue();
-
-    if (currentMax !== expectedMax) {
-      const page = Math.round((pagination.getPage() / currentMax) * expectedMax);
-
-      pagination.reset({ page, min: 0, max: getStepsValue() });
-      updateButtonsState();
-    }
-
-    updateSliderOffset();
-  };
-
-  prevButton.addEventListener('click', handlePrevClick);
-  nextButton.addEventListener('click', handleNextClick);
-
-  new ResizeObserver((entries) => {
-    entries.forEach(handleSliderWrapperResize);
-  }).observe(sliderSection);
+  prevButton.addEventListener('click', sliderService.prev);
+  nextButton.addEventListener('click', sliderService.next);
 
   sliderSection.append(container);
   container.append(textContainer, sliderContainer, buttonsContainer);
   textContainer.append(heading, paragraph);
   buttonsContainer.append(prevButton, nextButton);
-
-  updateButtonsState();
 
   return sliderSection;
 }

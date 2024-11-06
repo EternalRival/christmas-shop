@@ -10,12 +10,15 @@ function getImageSrcByCategory(category: string) {
     case 'For Harmony': {
       return GIFT_FOR_HARMONY_IMAGE_SRC;
     }
+
     case 'For Health': {
       return GIFT_FOR_HEALTH_IMAGE_SRC;
     }
+
     case 'For Work': {
       return GIFT_FOR_WORK_IMAGE_SRC;
     }
+
     default: {
       throw new UnknownGiftCategoryError(category);
     }

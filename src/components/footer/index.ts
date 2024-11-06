@@ -4,7 +4,7 @@ import { Icon } from '~/assets/icons/icon.enum';
 import SANTA_CLAUS_IMAGE_SRC from '~/assets/icons/santa-claus.svg';
 import SNAKE_IMAGE_SRC from '~/assets/icons/snake.svg';
 import SVGIcon from '~/components/svg-icon';
-import { a, div, footer, img, li, p, span, ul } from '~/utils/create-element';
+import { a, div, footer, img, li, p, ul } from '~/utils/create-element';
 import styles from './footer.module.css';
 
 const CONTACT_LIST = [
@@ -47,10 +47,7 @@ export default function Footer(props?: { widgetId?: string }) {
           { className: styles['socials-list'] },
           SOCIALS_LIST.map(({ iconName, text, href }) =>
             li({ className: styles['socials-list-item'] }, [
-              a({ className: styles['social-link'], href }, [
-                SVGIcon({ name: iconName }),
-                span({ className: 'sr-only', textContent: text }),
-              ]),
+              a({ className: styles['social-link'], href, ariaLabel: text }, [SVGIcon({ name: iconName })]),
             ]),
           ),
         ),
