@@ -77,13 +77,14 @@
     transition-duration: 250ms;
     transition-property: color, background-color;
 
-    &[inert] {
+    &:disabled {
+      pointer-events: none;
       color: var(--color-static-white-40);
       background-color: var(--color-static-white-40);
     }
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover:not([inert]) {
+      &:hover:enabled {
         color: var(--color-primary);
         background-color: var(--color-static-white);
       }

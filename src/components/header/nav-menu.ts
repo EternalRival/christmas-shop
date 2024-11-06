@@ -20,9 +20,8 @@ export default class NavMenu {
             li({ className: styles['nav-item'], onclick: onClose }, [
               a({
                 className: clsx(styles['nav-link'], 'text-action-small'),
-                href,
+                ...(!isCurrentRoute(href) && { href }),
                 text,
-                inert: isCurrentRoute(href),
               }),
             ]),
           ),

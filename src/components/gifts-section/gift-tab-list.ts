@@ -23,7 +23,7 @@ export default class GiftTabList<TabName extends string> {
         button({
           className: clsx(styles['tab-button'], 'text-action-small'),
           textContent: name,
-          inert: name === this.state.currentTab,
+          disabled: name === this.state.currentTab,
           onclick: () => {
             this.state.currentTab = name;
             this.getNode().replaceChildren(...this.createTabListItems({ tabNameList }));

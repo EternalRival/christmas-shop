@@ -137,7 +137,8 @@
       transition-duration: 250ms;
       transition-property: color, background-color;
 
-      &[inert] {
+      &:not([href]) {
+        pointer-events: none;
         color: var(--color-primary);
         background-color: var(--color-primary-10);
       }
