@@ -1,3 +1,3 @@
 export default function isCurrentRoute(route: string) {
-  return location.pathname === route;
+  return new RegExp(`^${route}/?$`).test(location.pathname);
 }
