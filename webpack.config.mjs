@@ -59,8 +59,10 @@ export default {
                 exportLocalsConvention: 'as-is',
                 localIdentName: isProduction ? '[hash:base64]' : '[path][name]__[local]',
               },
+              importLoaders: 1,
             },
           },
+          'postcss-loader',
         ],
       },
       {
