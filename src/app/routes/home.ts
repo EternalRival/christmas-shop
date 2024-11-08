@@ -8,8 +8,11 @@ import Header from '~/components/header';
 import HeroSection from '~/components/hero-section';
 import SliderSection from '~/components/slider-section';
 import { main } from '~/utils/create-element';
+import printAssignmentLink from '~/utils/print-assignment-link';
 import { Route } from './route.enum';
 import { WidgetId } from './widget-id.enum';
+
+printAssignmentLink()
 
 document.body.append(
   Header({

@@ -1,12 +1,15 @@
 import '~/assets/globals.css';
 import GIFTS_DATA from '~/assets/json/gifts.json';
+import BackToTopButton from '~/components/back-to-top-button';
 import Footer from '~/components/footer';
 import GiftsSection from '~/components/gifts-section';
 import Header from '~/components/header';
 import { main } from '~/utils/create-element';
+import printAssignmentLink from '~/utils/print-assignment-link';
 import { Route } from './route.enum';
 import { WidgetId } from './widget-id.enum';
-import BackToTopButton from '~/components/back-to-top-button';
+
+printAssignmentLink()
 
 const backToTopButton = new BackToTopButton();
 
