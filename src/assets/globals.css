@@ -13,6 +13,7 @@
   --color-tag-pink: #ff43f7;
   --color-tag-green: #06a44f;
   --color-content-background: #ecf3f8;
+  --transition-duration: 250ms;
 }
 
 html {

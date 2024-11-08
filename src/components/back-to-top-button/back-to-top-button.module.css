@@ -22,7 +22,7 @@
   border: 0.0625rem solid var(--color-primary);
   border-radius: 50%;
 
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-property: bottom;
 
   &.hidden {

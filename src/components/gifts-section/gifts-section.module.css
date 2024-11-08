@@ -50,7 +50,7 @@
     border: unset;
     border-radius: 0.75rem;
 
-    transition-duration: 250ms;
+    transition-duration: var(--transition-duration);
     transition-property: background-color;
 
     &:disabled {

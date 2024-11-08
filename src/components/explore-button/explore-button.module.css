@@ -10,7 +10,7 @@
   border: none;
   border-radius: 1.25rem;
 
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-property: color, background-color;
 
   @media (hover: hover) and (pointer: fine) {

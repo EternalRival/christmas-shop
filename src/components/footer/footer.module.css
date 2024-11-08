@@ -47,7 +47,7 @@
     .contact-link {
       color: var(--color-dark);
       text-decoration: none;
-      transition-duration: 250ms;
+      transition-duration: var(--transition-duration);
       transition-property: color;
 
       &::after {
@@ -59,7 +59,7 @@
     }
 
     .contact-heading {
-      transition-duration: 250ms;
+      transition-duration: var(--transition-duration);
       transition-property: color;
     }
 
@@ -105,7 +105,7 @@
   :is(.social-link, .school-link) {
     color: var(--color-dark);
     text-decoration: none;
-    transition-duration: 250ms;
+    transition-duration: var(--transition-duration);
     transition-property: color;
   }
 

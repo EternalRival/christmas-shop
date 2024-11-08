@@ -36,7 +36,7 @@
     gap: 1.25rem;
     align-items: center;
 
-    transition-duration: 250ms;
+    transition-duration: var(--transition-duration);
     transition-property: transform;
   }
 
@@ -74,13 +74,13 @@
     border: 0.0625rem solid var(--color-static-white);
     border-radius: 1.25rem;
 
-    transition-duration: 250ms;
-    transition-property: color, background-color;
+    transition-duration: var(--transition-duration);
+    transition-property: color, border;
 
     &:disabled {
       pointer-events: none;
       color: var(--color-static-white-40);
-      background-color: var(--color-static-white-40);
+      border: 0.0625rem solid var(--color-static-white-40);
     }
 
     @media (hover: hover) and (pointer: fine) {
