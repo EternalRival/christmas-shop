@@ -20,7 +20,7 @@ export default function GiftCard({ giftData }: { giftData?: GiftCardData }) {
     GiftCategoryImage({ category }),
     div({ className: styles['text-container'] }, [
       GiftCategoryName({ category }),
-      h3({ className: clsx(styles['name'], 'text-header-3'), textContent: name, title: name }),
+      h3({ className: clsx(styles['name'], 'text-header-3'), textContent: name }),
     ]),
     button({
       className: styles['show-details-button'],

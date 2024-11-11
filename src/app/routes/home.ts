@@ -12,7 +12,7 @@ import printAssignmentLink from '~/utils/print-assignment-link';
 import { Route } from './route.enum';
 import { WidgetId } from './widget-id.enum';
 
-printAssignmentLink()
+printAssignmentLink();
 
 document.body.append(
   Header({
