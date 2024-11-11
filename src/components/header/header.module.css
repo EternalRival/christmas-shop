@@ -62,9 +62,10 @@
       display: block;
 
       width: 1.25rem;
-      height: 0.125rem;
+      height: 0.0625rem;
 
       background-color: var(--color-dark);
+      border-radius: 0.0625rem;
 
       transition-duration: var(--transition-duration);
     }

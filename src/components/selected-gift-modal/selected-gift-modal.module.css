@@ -108,6 +108,7 @@
       height: 0.125rem;
 
       background-color: var(--color-dark);
+      border-radius: 0.125rem;
     }
 
     &::before {
