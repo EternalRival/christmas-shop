@@ -28,7 +28,11 @@ export const dialog = createElementFactory('dialog');
 
 export const div = createElementFactory('div');
 
+export const fieldset = createElementFactory('fieldset');
+
 export const footer = createElementFactory('footer');
+
+export const form = createElementFactory('form');
 
 export const h1 = createElementFactory('h1');
 
@@ -45,6 +49,8 @@ export const img = createElementFactory('img');
 export const input = createElementFactory('input');
 
 export const label = createElementFactory('label');
+
+export const legend = createElementFactory('legend');
 
 export const li = createElementFactory('li');
 
