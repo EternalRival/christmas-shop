@@ -10,8 +10,8 @@ const isProduction = process.env['NODE_ENV'] === 'production';
 export default {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    home: './src/app/routes/home.ts',
-    gifts: './src/app/routes/gifts.ts',
+    home: './src/routes/home',
+    gifts: './src/routes/gifts',
   },
   output: {
     clean: true,
@@ -56,7 +56,6 @@ export default {
               modules: {
                 auto: true,
                 namedExport: false,
-                exportLocalsConvention: 'as-is',
                 localIdentName: isProduction ? '[hash:base64]' : '[path][name]__[local]',
               },
               importLoaders: 1,

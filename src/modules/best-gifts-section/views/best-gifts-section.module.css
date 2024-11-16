@@ -1,0 +1,46 @@
+.best-gifts-section {
+  padding: 3.75rem 0.5rem;
+
+  color: var(--color-static-white);
+
+  background-image: url('../../../assets/images/bg-snow.webp');
+  background-position: center;
+  background-size: cover;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    max-width: 39.5rem;
+    margin-inline: auto;
+
+    @media (width > 81.75rem) {
+      max-width: 79.75rem;
+    }
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+
+    max-width: 26.625rem;
+    margin-inline: auto;
+  }
+
+  .cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+
+    margin-inline: auto;
+    padding-left: 0;
+  }
+
+  .cards-list-item {
+    list-style: none;
+  }
+}

@@ -1,0 +1,45 @@
+@import url('modern-normalize/modern-normalize.css');
+@import url('../fonts/typography.css');
+
+:root {
+  --color-primary: #ff4646;
+  --color-primary-10: #ff46461a;
+  --color-dark: #181c29;
+  --color-dark-80: #181c29cc;
+  --color-static-white: #fff;
+  --color-static-white-40: #fff6;
+  --color-static-white-20: #fff3;
+  --color-tag-purple: #4361ff;
+  --color-tag-pink: #ff43f7;
+  --color-tag-green: #06a44f;
+  --color-content-background: #ecf3f8;
+  --transition-duration: 250ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-static-white);
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol) {
+  margin-block: 0;
+}
+
+.sr-only {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+}
