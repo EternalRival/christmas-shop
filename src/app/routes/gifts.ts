@@ -7,6 +7,7 @@ import Header from '~/components/header';
 import { main } from '~/utils/create-element';
 import printAssignmentLink from '~/utils/print-assignment-link';
 import { Route } from './route.enum';
+import styles from './home.module.css';
 import { WidgetId } from './widget-id.enum';
 
 printAssignmentLink();
@@ -23,6 +24,6 @@ document.body.append(
       { text: 'contacts', href: `#${WidgetId.CONTACTS}` },
     ],
   }),
-  main(null, [GiftsSection({ gifts: GIFTS_DATA }), backToTopButton.getNode()]),
+  main({ className: styles['main'] }, [GiftsSection({ gifts: GIFTS_DATA }), backToTopButton.getNode()]),
   Footer({ widgetId: WidgetId.CONTACTS }),
 );

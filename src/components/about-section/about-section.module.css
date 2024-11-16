@@ -1,9 +1,5 @@
 .about-section {
-  max-width: 90rem;
-  margin-inline: auto;
   padding: 3.75rem 0.5rem;
-
-  background-color: var(--color-primary);
   background-image: url('../../assets/images/bg-snow.webp');
   background-position: center;
   background-size: cover;

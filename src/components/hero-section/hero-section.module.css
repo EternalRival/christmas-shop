@@ -1,15 +1,11 @@
 .hero-section {
-  max-width: 90rem;
-  margin-inline: auto;
   padding: 3.75rem 0.5rem;
 
   color: var(--color-static-white);
 
-  background-color: var(--color-primary);
   background-image: url('../../assets/images/bg-ball.webp'), url('../../assets/images/bg-snow.webp');
   background-position: center;
   background-size: cover;
-  border-radius: 1.25rem 1.25rem 0 0;
 
   .container {
     display: flex;

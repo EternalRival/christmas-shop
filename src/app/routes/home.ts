@@ -10,6 +10,7 @@ import SliderSection from '~/components/slider-section';
 import { main } from '~/utils/create-element';
 import printAssignmentLink from '~/utils/print-assignment-link';
 import { Route } from './route.enum';
+import styles from './home.module.css';
 import { WidgetId } from './widget-id.enum';
 
 printAssignmentLink();
@@ -24,7 +25,7 @@ document.body.append(
       { text: 'contacts', href: `#${WidgetId.CONTACTS}` },
     ],
   }),
-  main(null, [
+  main({ className: styles['main'] }, [
     HeroSection(),
     AboutSection({ widgetId: WidgetId.ABOUT }),
     SliderSection(),
