@@ -39,6 +39,7 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.10.0",
     "stylelint-config-clean-order": "^6.1.0",
+    "stylelint-config-css-modules": "^4.4.0",
     "stylelint-config-standard": "^36.0.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.6.3",
