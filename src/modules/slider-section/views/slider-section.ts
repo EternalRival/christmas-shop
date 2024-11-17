@@ -89,7 +89,7 @@ export default function SliderSection() {
     getMargin: () => Number.parseInt(window.getComputedStyle(container).marginInline, 10),
     getWrapperWidth: () => sliderSection.clientWidth,
     getContainerWidth: () => sliderContainer.scrollWidth,
-    getMaxStepsValue: () => (window.innerWidth >= 768 ? 3 : 6),
+    getMaxStepsValue: () => (window.innerWidth > 768 ? 3 : 6),
     getElementToObserveResize: () => sliderSection,
     onOffsetChange: ({ newOffset }) => {
       sliderContainer.style.transform = `translateX(-${newOffset}px)`;

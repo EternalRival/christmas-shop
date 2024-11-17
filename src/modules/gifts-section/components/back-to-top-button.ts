@@ -3,6 +3,8 @@ import { button } from '~/core/utils/create-element';
 import scrollWindowToTop from '~/core/utils/scroll-window-to-top';
 import styles from './back-to-top-button.module.css';
 
+const SCROLL_THRESHOLD = 300;
+
 export default class BackToTopButton {
   private readonly node: HTMLButtonElement;
 
@@ -19,7 +21,7 @@ export default class BackToTopButton {
   private initAutoHiding() {
     window.addEventListener('scroll', () => {
       if ('hidden' in styles) {
-        this.getNode().classList.toggle(styles.hidden, window.scrollY < 1);
+        this.getNode().classList.toggle(styles.hidden, window.scrollY < SCROLL_THRESHOLD);
       }
     });
   }
