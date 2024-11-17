@@ -5,13 +5,19 @@ declare module '*.module.css' {
 }
 
 declare module '*.svg' {
-  const classes: string;
+  const svg: string;
 
-  export default classes;
+  export default svg;
+}
+
+declare module '*.svg?resource' {
+  const svg: string;
+
+  export default svg;
 }
 
 declare module '*.webp' {
-  const classes: string;
+  const image: string;
 
-  export default classes;
+  export default image;
 }

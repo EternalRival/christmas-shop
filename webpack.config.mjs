@@ -65,11 +65,11 @@ export default {
         ],
       },
       {
-        test: /\.(woff2|webp)$/i,
+        test: /\.(svg|woff2|webp)$/i,
         type: 'asset',
       },
       {
-        test: /\.svg$/,
+        resourceQuery: /resource/,
         type: 'asset/resource',
       },
     ],

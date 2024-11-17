@@ -1,5 +1,5 @@
 import type Icon from '~/assets/icons';
-import ICON_URL from '~/assets/icons/icons-sprite.svg';
+import ICON_URL from '~/assets/icons/icons-sprite.svg?resource';
 
 const NS = 'http://www.w3.org/2000/svg';
 
