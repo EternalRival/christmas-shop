@@ -10,7 +10,8 @@
   border: none;
   border-radius: 1.25rem;
 
-  transition-duration: var(--transition-duration);
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
   transition-property: color, background-color;
 
   @media (hover: hover) and (pointer: fine) {
