@@ -50,7 +50,7 @@ export default class SliderService {
   }
 
   private handleOffsetChange() {
-    this.props.onOffsetChange({ newOffset: this.getCurrentOffset() });
+    this.props.onOffsetChange({ newOffset: -this.getCurrentOffset() });
   }
 
   private handleSlideChange() {

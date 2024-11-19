@@ -91,9 +91,7 @@ export default function SliderSection() {
     getContainerWidth: () => sliderContainer.scrollWidth,
     getMaxStepsValue: () => (window.innerWidth > 768 ? 3 : 6),
     getElementToObserveResize: () => sliderSection,
-    onOffsetChange: ({ newOffset }) => {
-      sliderContainer.style.transform = `translateX(-${newOffset}px)`;
-    },
+    onOffsetChange: ({ newOffset }) => sliderContainer.style.setProperty('--slider-offset', `${newOffset}px`),
     onSlideChange: ({ isFirst, isLast }) => {
       prevButton.disabled = isFirst;
       nextButton.disabled = isLast;

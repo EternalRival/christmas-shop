@@ -29,6 +29,10 @@
   }
 
   .slider-container {
+    --slider-offset: 0;
+
+    transform: translateX(var(--slider-offset));
+
     display: flex;
     gap: 1.25rem;
     align-items: center;
