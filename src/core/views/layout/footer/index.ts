@@ -47,7 +47,13 @@ export default function Footer(props?: { widgetId?: string }) {
         CONTACT_LIST.map(({ imageSrc, text, href, heading }) =>
           li({ className: styles.contactsListItem }, [
             img({ className: styles.contactIcon, src: imageSrc, alt: '' }),
-            a({ className: clsx(styles.contactLink, 'text-action-large'), href, text, target: '_blank' }),
+            a({
+              className: clsx(styles.contactLink, 'text-action-large'),
+              href,
+              text,
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            }),
             p({ className: clsx(styles.contactHeading, 'text-header-3'), textContent: heading }),
           ]),
         ),
@@ -57,7 +63,9 @@ export default function Footer(props?: { widgetId?: string }) {
           { className: styles.socialsList },
           SOCIALS_LIST.map(({ iconName, text, href }) =>
             li({ className: styles.socialsListItem }, [
-              a({ className: styles.socialLink, href, ariaLabel: text }, [SVGIcon({ name: iconName })]),
+              a({ className: styles.socialLink, href, target: '_blank', rel: 'noopener noreferrer', ariaLabel: text }, [
+                SVGIcon({ name: iconName }),
+              ]),
             ]),
           ),
         ),
@@ -67,6 +75,7 @@ export default function Footer(props?: { widgetId?: string }) {
           text: CAPTION_TEXT,
           href: RSSCHOOL_WEBSITE_URL,
           target: '_blank',
+          rel: 'noopener noreferrer',
         }),
       ]),
     ]),
