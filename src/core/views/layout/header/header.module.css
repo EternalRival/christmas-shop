@@ -144,6 +144,11 @@
         background-color: var(--color-primary-10);
       }
 
+      &:active {
+        color: var(--color-primary);
+        background-color: var(--color-primary-10);
+      }
+
       @media (width > 48rem) {
         font-family: Montserrat, sans-serif; /* .text-action-small */
         font-size: 0.75rem; /* .text-action-small */

@@ -48,6 +48,10 @@
     border-radius: var(--border-radius);
   }
 
+  &:active .name {
+    color: var(--color-primary);
+  }
+
   @media (hover: hover) and (pointer: fine) {
     &:hover .name {
       color: var(--color-primary);

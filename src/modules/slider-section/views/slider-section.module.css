@@ -84,6 +84,11 @@
       border: 0.0625rem solid var(--color-static-white-40);
     }
 
+    &:active {
+      color: var(--color-primary);
+      background-color: var(--color-static-white);
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover:enabled {
         color: var(--color-primary);
