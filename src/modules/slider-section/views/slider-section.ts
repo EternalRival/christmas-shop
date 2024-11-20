@@ -5,7 +5,7 @@ import CHRISTMAS_TREES_IMAGE_SRC from '~/assets/images/christmas-trees.webp';
 import FAIRYTALE_HOUSE_IMAGE_SRC from '~/assets/images/fairytale-house.webp';
 import SNOWMAN_IMAGE_SRC from '~/assets/images/snowman.webp';
 import SVGIcon from '~/core/components/svg-icon';
-import { button, div, h2, img, p, section, span } from '~/core/utils/create-element';
+import { button, div, h2, img, section, span } from '~/core/utils/create-element';
 import SliderService from '../services/slider.service';
 import styles from './slider-section.module.css';
 
@@ -30,8 +30,8 @@ const SLIDER_ITEM_LIST: SliderItem[] = [
   { type: 'image', imageSrc: FAIRYTALE_HOUSE_IMAGE_SRC },
 ];
 
-const HEADING_TEXT = 'Become Happier!';
-const PARAGRAPH_TEXT = 'in the new 2025';
+const HEADING_TEXT_1 = 'Become Happier!';
+const HEADING_TEXT_2 = 'in the new 2025';
 const SLIDER_PREV_BUTTON_LABEL = 'previous slide button';
 const SLIDER_NEXT_BUTTON_LABEL = 'next slide button';
 
@@ -46,7 +46,7 @@ export default function SliderSection() {
 
   const container = div({ className: styles.container });
 
-  const textContainer = div({ className: styles.textContainer });
+  const heading = h2({ className: styles.heading });
   const sliderContainer = div(
     { className: styles.sliderContainer },
     SLIDER_ITEM_LIST.map((item) => {
@@ -74,8 +74,8 @@ export default function SliderSection() {
   );
   const buttonsContainer = div({ className: styles.sliderButtonsContainer });
 
-  const heading = h2({ className: 'text-caption', textContent: HEADING_TEXT });
-  const paragraph = p({ className: 'text-header-2', textContent: PARAGRAPH_TEXT });
+  const headingCaption = span({ className: 'text-caption', textContent: HEADING_TEXT_1 });
+  const headingHeader = span({ className: 'text-header-2', textContent: HEADING_TEXT_2 });
 
   const prevButton = button({ className: styles.sliderButton, ariaLabel: SLIDER_PREV_BUTTON_LABEL }, [
     SVGIcon({ name: Icon.ARROW_LEFT }),
@@ -102,8 +102,8 @@ export default function SliderSection() {
   nextButton.addEventListener('click', sliderService.next);
 
   sliderSection.append(container);
-  container.append(textContainer, sliderContainer, buttonsContainer);
-  textContainer.append(heading, paragraph);
+  container.append(heading, sliderContainer, buttonsContainer);
+  heading.append(headingCaption, headingHeader);
   buttonsContainer.append(prevButton, nextButton);
 
   return sliderSection;

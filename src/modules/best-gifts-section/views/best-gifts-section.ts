@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import GiftCard from '~/core/components/gift-card';
 import type { GiftCardData } from '~/core/models/gift-data.type';
-import { div, h2, li, p, section, ul } from '~/core/utils/create-element';
+import { div, h2, li, section, span, ul } from '~/core/utils/create-element';
 import styles from './best-gifts-section.module.css';
 
 const CAPTION_TEXT = 'Best Gifts';
@@ -25,9 +25,9 @@ function getRandomGifts(gifts: GiftCardData[], count: number) {
 export default function BestGiftsSection({ gifts, widgetId }: { gifts: GiftCardData[]; widgetId?: string }) {
   return section({ className: styles.bestGiftsSection, ...(widgetId && { id: widgetId }) }, [
     div({ className: styles.container }, [
-      div({ className: styles.textContainer }, [
-        p({ className: 'text-caption', textContent: CAPTION_TEXT }),
-        h2({ className: 'text-header-2', textContent: HEADER_TEXT }),
+      h2({ className: styles.heading }, [
+        span({ className: 'text-caption', textContent: CAPTION_TEXT }),
+        span({ className: 'text-header-2', textContent: HEADER_TEXT }),
       ]),
       ul(
         { className: clsx(styles.cardsList) },
