@@ -23,7 +23,7 @@
   border-radius: 0.75rem;
 
   transition-duration: var(--transition-duration);
-  transition-property: background-color;
+  transition-property: background-color, scale;
 
   &:has(:checked) {
     pointer-events: none;
@@ -31,8 +31,8 @@
   }
 
   &:active {
+    scale: 0.95;
     background-color: var(--color-static-white-20);
-    filter: brightness(1.1);
   }
 
   @media (width > 31.625rem) {

@@ -34,7 +34,7 @@
     text-overflow: ellipsis;
 
     transition-duration: var(--transition-duration);
-    transition-property: color;
+    transition-property: color, scale;
   }
 
   .show-details-button {
@@ -49,8 +49,8 @@
   }
 
   &:active .name {
+    scale: 0.95;
     color: var(--color-primary);
-    filter: brightness(1.1);
   }
 
   @media (hover: hover) and (pointer: fine) {

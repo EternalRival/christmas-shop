@@ -12,12 +12,12 @@
 
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
-  transition-property: color, background-color;
+  transition-property: color, background-color, scale;
 
   &:active {
+    scale: 0.95;
     color: var(--color-dark);
     background-color: var(--color-static-white);
-    filter: brightness(1.1);
   }
 
   @media (hover: hover) and (pointer: fine) {

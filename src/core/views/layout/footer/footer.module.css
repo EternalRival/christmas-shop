@@ -48,7 +48,7 @@
       color: var(--color-dark);
       text-decoration: none;
       transition-duration: var(--transition-duration);
-      transition-property: color;
+      transition-property: color, scale;
 
       &::after {
         content: '';
@@ -60,18 +60,18 @@
 
     .contact-heading {
       transition-duration: var(--transition-duration);
-      transition-property: color;
+      transition-property: color, scale;
     }
 
     &:active {
       .contact-link {
+        scale: 0.95;
         color: var(--color-primary);
-        filter: brightness(1.1);
       }
 
       .contact-heading {
+        scale: 0.95;
         color: var(--color-primary);
-        filter: brightness(1.1);
       }
     }
 

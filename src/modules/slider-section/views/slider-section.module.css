@@ -76,7 +76,7 @@
     border-radius: 1.25rem;
 
     transition-duration: var(--transition-duration);
-    transition-property: color, border;
+    transition-property: background-color, color, border, scale;
 
     &:disabled {
       pointer-events: none;
@@ -85,9 +85,9 @@
     }
 
     &:active {
+      scale: 0.95;
       color: var(--color-primary);
       background-color: var(--color-static-white);
-      filter: brightness(1.1);
     }
 
     @media (hover: hover) and (pointer: fine) {
