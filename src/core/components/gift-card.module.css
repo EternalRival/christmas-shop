@@ -193,11 +193,13 @@
     }
 
     &::before {
-      transform: translateY(0.0625rem) rotate(0.375turn);
+      translate: 0 0.0625rem;
+      rotate: 0.375turn;
     }
 
     &::after {
-      transform: translateY(-0.0625rem) rotate(0.625turn);
+      translate: 0 -0.0625rem;
+      rotate: 0.625turn;
     }
   }
 }
