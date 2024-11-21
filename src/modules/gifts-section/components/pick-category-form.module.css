@@ -32,6 +32,7 @@
 
   &:active {
     background-color: var(--color-static-white-20);
+    filter: brightness(1.1);
   }
 
   @media (width > 31.625rem) {

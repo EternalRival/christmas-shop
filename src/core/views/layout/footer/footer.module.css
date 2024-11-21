@@ -66,10 +66,12 @@
     &:active {
       .contact-link {
         color: var(--color-primary);
+        filter: brightness(1.1);
       }
 
       .contact-heading {
         color: var(--color-primary);
+        filter: brightness(1.1);
       }
     }
 

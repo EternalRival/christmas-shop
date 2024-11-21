@@ -148,6 +148,7 @@
       &:active {
         color: var(--color-primary);
         background-color: var(--color-primary-10);
+        filter: brightness(1.1);
       }
 
       @media (width > 48rem) {

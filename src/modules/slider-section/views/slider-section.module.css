@@ -87,6 +87,7 @@
     &:active {
       color: var(--color-primary);
       background-color: var(--color-static-white);
+      filter: brightness(1.1);
     }
 
     @media (hover: hover) and (pointer: fine) {
