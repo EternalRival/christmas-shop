@@ -85,8 +85,12 @@ export default function SliderSection() {
   ]);
 
   const sliderService = new SliderService({
-    getPadding: () => Number.parseInt(window.getComputedStyle(sliderSection).paddingInline, 10),
-    getMargin: () => Number.parseInt(window.getComputedStyle(container).marginInline, 10),
+    getPadding: () =>
+      Number.parseInt(window.getComputedStyle(sliderSection).paddingInlineStart, 10) +
+      Number.parseInt(window.getComputedStyle(sliderSection).paddingInlineEnd, 10),
+    getMargin: () =>
+      Number.parseInt(window.getComputedStyle(container).marginInlineStart, 10) +
+      Number.parseInt(window.getComputedStyle(container).marginInlineEnd, 10),
     getWrapperWidth: () => sliderSection.clientWidth,
     getContainerWidth: () => sliderContainer.scrollWidth,
     getMaxStepsValue: () => (window.innerWidth > 768 ? 3 : 6),

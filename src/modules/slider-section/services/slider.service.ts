@@ -46,7 +46,7 @@ export default class SliderService {
 
     const maxSteps = this.props.getMaxStepsValue();
 
-    return (currentSlideNumber * (containerWidth - (wrapperWidth - (padding + margin) * 2))) / maxSteps;
+    return (currentSlideNumber * (containerWidth - (wrapperWidth - (padding + margin)))) / maxSteps;
   }
 
   private handleOffsetChange() {

@@ -1,5 +1,5 @@
 import { dialog } from '~/core/utils/create-element';
-import animateDialog from './animate-dialog';
+import animateDialog from '../utils/animate-dialog';
 
 export default class Dialog {
   private readonly node: HTMLDialogElement;
