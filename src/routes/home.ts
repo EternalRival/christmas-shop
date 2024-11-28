@@ -6,6 +6,7 @@ import AboutSection from '~/modules/about-section/views/about-section';
 import BestGiftsSection from '~/modules/best-gifts-section/views/best-gifts-section';
 import CTASection from '~/modules/cta-section/views/cta-section';
 import HeroSection from '~/modules/hero-section/views/hero-section';
+import initEasterEggLove from '~/modules/slider-section/utils/init-easter-egg-love';
 import SliderSection from '~/modules/slider-section/views/slider-section';
 import { WidgetId } from './widget-id.enum';
 
@@ -22,3 +23,5 @@ document.body.append(
 );
 
 printAssignmentLink();
+
+initEasterEggLove();
