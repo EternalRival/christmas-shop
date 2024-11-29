@@ -30,6 +30,8 @@ const SLIDER_ITEM_LIST: SliderItem[] = [
   { type: 'image', imageSrc: FAIRYTALE_HOUSE_IMAGE_SRC },
 ];
 
+const SLIDER_TRANSITION_DURATION = '250ms';
+
 const HEADING_TEXT_1 = 'Become Happier!';
 const HEADING_TEXT_2 = 'in the new 2025';
 const SLIDER_PREV_BUTTON_LABEL = 'previous slide button';
@@ -102,8 +104,23 @@ export default function SliderSection() {
     },
   });
 
-  prevButton.addEventListener('click', sliderService.prev);
-  nextButton.addEventListener('click', sliderService.next);
+  const handleSliderScroll = () => {
+    sliderContainer.style.setProperty('--transition-duration', SLIDER_TRANSITION_DURATION);
+    sliderContainer.addEventListener(
+      'transitionend',
+      () => sliderContainer.style.setProperty('--transition-duration', '0ms'),
+      { once: true },
+    );
+  };
+
+  prevButton.addEventListener('click', () => {
+    handleSliderScroll();
+    sliderService.prev();
+  });
+  nextButton.addEventListener('click', () => {
+    handleSliderScroll();
+    sliderService.next();
+  });
 
   sliderSection.append(container);
   container.append(heading, sliderContainer, buttonsContainer);

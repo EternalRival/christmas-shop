@@ -29,7 +29,8 @@
   }
 
   .slider-container {
-    --slider-offset: 0;
+    --slider-offset: 0px;
+    --transition-duration: 0ms;
 
     translate: var(--slider-offset);
 
