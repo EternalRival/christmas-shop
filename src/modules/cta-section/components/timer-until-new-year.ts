@@ -21,7 +21,7 @@ export default class TimeUntilNewYear {
   constructor() {
     this.node = div({ className: styles.timer }, this.create(getParsedTimeUntilNewYear()));
 
-    this.initAutoUpdater({ delay: 1000 });
+    this.initAutoUpdater({ delay: 250 });
   }
 
   public getNode() {
