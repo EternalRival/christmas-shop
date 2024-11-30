@@ -29,7 +29,7 @@ export default async function initEasterEggLove() {
 
     l.style.transform = 'translateX(369%) scaleY(-1)';
     o.style.transform = 'translateX(-69%) scaleY(1)';
-    v.style.transform = 'translateX(-81%) scaleY(-1)';
+    v.style.transform = 'translateX(-81%) rotate(-0.5turn)';
     e.style.transform = 'translateX(-88%) scaleY(1)';
 
     [l, o, v, e].forEach((span) => {
